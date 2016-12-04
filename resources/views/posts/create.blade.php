@@ -5,8 +5,8 @@
 
 	<hr>
 
-<!-- 	{!! Form::open() !!}
-		(!! Form::text('name') !!)
-	{!! Form::close() !!} -->
+	{!! Form::open() !!}
+		
+	{!! Form::close() !!}
 
 @stop 
