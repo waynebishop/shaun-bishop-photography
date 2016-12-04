@@ -5,7 +5,8 @@
 
 	<hr>
 
-	
+<!-- 	{!! Form::open() !!}
 
+	{!! Form::close() !!} -->
 
 @stop 
