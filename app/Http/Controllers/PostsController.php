@@ -7,8 +7,10 @@ use App\Post;
 
 use Carbon\Carbon;
 
+use Illuminate\Http\Request;
+
 use App\Http\Requests;
-use App\Http\Requests\CreatePostRequest;
+use App\Http\Requests\PostRequest;
 use App\Http\Controllers\Controller;
 
 class PostsController extends Controller
@@ -43,7 +45,7 @@ class PostsController extends Controller
     	return view('posts.create'); 
     }
 
-    public function store(CreatePostRequest $request)
+    public function store(PostRequest $request)
     {
         // Create and save a post and redirect to posts ie blogroll
         Post::create($request->all());
@@ -51,5 +53,26 @@ class PostsController extends Controller
         return redirect('posts');
 
     }
+
+    public function edit($id)
+    {
+        $post = Post::findOrFail($id);
+        return view('posts.edit', compact('post'));
+    }
+
+    public function update($id, PostRequest $request)
+    {
+        $post = Post::findOrFail($id);
+
+        $post->update($request->all());
+
+        return redirect('posts');
+
+    }
+
+
+
+
+
 
 }

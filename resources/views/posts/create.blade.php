@@ -5,52 +5,11 @@
 
 	<hr>
 
-	<div class="row">
-		<div class="col-md-10 col-md-offset-1">
-			
-			{!! Form::open(['url' => 'posts']) !!}
 		
-				<!-- title input -->
-				<div class="form-group">
-					{!! Form::label('title', 'Title:') !!}
-					{!! Form::text('title', null, ['class' => 'form-control']) !!}			
-				</div>
-
-				<!-- intro input -->
-				<div class="form-group">
-					{!! Form::label('intro', 'Intro:') !!}
-					{!! Form::textarea('intro', null, ['class' => 'form-control']) !!}			
-				</div>
-				
-				<!-- body input -->
-				<div class="form-group">
-					{!! Form::label('body', 'Body:') !!}
-					{!! Form::textarea('body', null, ['class' => 'form-control']) !!}			
-				</div>
-
-				<!-- Published at -->
-				<div class="form-group">
-					{!! Form::label('published_at', 'Publish On:') !!}
-					{!! Form::input('date','published_at', date('Y-m-d'), ['class' => 'form-control']) !!}			
-				</div>
-
-				<!-- Submit button -->
-				<div class="form-group">
-					{!! Form::submit('Add Post', ['class' => 'btn btn-primary form-control']) !!}			
-				</div>
-
+			{!! Form::open(['url' => 'posts']) !!}
+				@include ('posts._form', ['submitButtonText' => 'Add Post'])
 			{!! Form::close() !!}
 
-			<!-- Error messages form fields -->
-			@if ($errors->any())
-				<ul class="alert alert-danger">
-					@foreach ($errors->all() as $error)
-						<li>{{ $error }}</li>	
-					@endforeach
-				</ul>
-			@endif
-		</div>
-	</div>
-
+			@include ('errors/list')
 	
 @stop
