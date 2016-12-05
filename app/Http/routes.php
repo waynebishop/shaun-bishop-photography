@@ -6,6 +6,17 @@ Route::get('about', 'PagesController@about');
 
 Route::get('contact', 'PagesController@contact');
 
+Route::get('portfolios/sport', 'PortfoliosController@sport');
+
+Route::get('portfolios/nature', 'PortfoliosController@nature');
+
+Route::get('portfolios/scenic', 'PortfoliosController@scenic');
+
+Route::get('portfolios/people', 'PortfoliosController@people');
+
+Route::get('portfolios/other', 'PortfoliosController@other');
+
+
 // Route::get('posts', 'PostsController@index');
 
 // Route::get('posts/create', 'PostsController@create');

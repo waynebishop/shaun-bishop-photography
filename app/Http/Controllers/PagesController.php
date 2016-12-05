@@ -11,7 +11,7 @@ class PagesController extends Controller
 {
     public function about()
     {
-    	$first = 'Wayne';
+    	$first = 'Shaun';
     	$last = 'Bishop';
 
     	return view('pages.about', compact('first', 'last')); 

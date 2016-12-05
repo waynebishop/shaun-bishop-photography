@@ -9,7 +9,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" id="navbar-logo" href="#">
+            <a class="navbar-brand" id="navbar-logo" href="/">
                 <img src="/img/SBP_Logo_websafe.gif" alt="logo">    
             </a>
         </div>
@@ -19,21 +19,21 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Portfolio <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="portfolio_sport.html">Sport</a></li>
-                        <li><a href="portfolio_nature.html">Nature</a></li>
-                        <li><a href="portfolio_scenic.html">Scenic</a></li>
-                        <li><a href="portfolio_people.html">People</a></li>
-                        <li><a href="portfolio_other.html">Other</a></li>                            
+                        <li><a href="/portfolios/sport">Sport</a></li>
+                        <li><a href="/portfolios/nature">Nature</a></li>
+                        <li><a href="/portfolios/scenic">Scenic</a></li>
+                        <li><a href="/portfolios/people">People</a></li>
+                        <li><a href="/portfolios/other">Other</a></li>                            
                     </ul>
                 </li>
                 <li>
-                    <a href="blog_roll.html">Blog</a>
+                    <a href="/posts">Blog</a>
                 </li>
                 <li>
-                    <a href="about.html#">About Me</a>
+                    <a href="/about">About Me</a>
                 </li>
                 <li>
-                    <a href="contact.html">Contact</a>
+                    <a href="/contact">Contact</a>
                 </li>
                
                 <li class="dropdown">
