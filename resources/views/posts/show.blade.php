@@ -2,10 +2,20 @@
 
 @section('content')
 
-	<h1>{{ $post->title }}</h1>
+	<div class="row">
+		<div class="col-md-12">
+			
+			<h1>{{ $post->title }}</h1>
 
-	<article>
-		{{ $post->intro }}
-	</article>
+
+
+			<article>
+			<p>{{ $post->intro }}</p>
+
+			<p>{{ $post->body }}</p>
+			</article>		
+
+		</div>
+	</div>
 
 @stop

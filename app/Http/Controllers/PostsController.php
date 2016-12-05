@@ -34,7 +34,7 @@ class PostsController extends Controller
         // dd($post->created_at->addDays(8)->diffForHumans());
         
         // See model Post.php to see "protected $dates" re how we make published_at date Carbon compatible
-        dd($post->published_at);
+        // dd($post->published_at);
 
 
     	return view('posts.show', compact('post'));	

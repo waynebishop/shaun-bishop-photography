@@ -2,21 +2,33 @@
 
 @section('content')
 
-	<h1>Posts</h1>
+	<div class="row">
+		<div class="col-md-12">
+			
+		<h1>Posts</h1>
 
-	@foreach ($posts as $post)
-		<article>
-			<h2>
-				<a href="/posts/{{ $post->id }} ">{{ $post->title }}</a>
-			</h2>	
+			@foreach ($posts as $post)
+				<article>
+					<h2>
+						<a href="/posts/{{ $post->id }} ">{{ $post->title }}</a>
+					</h2>	
 
-			<p>{{ $post->intro }}</p>
+					<p>{{ $post->intro }}</p>
 
-			<div class="body">{{ $post->body }}</div>
+					<div class="body">{{ $post->body }}</div>
 
-		</article>
+				</article>
 
-	@endforeach
+			@endforeach	
+
+		</div>
+	</div>
+	
+
+
+
+	</div>
+
 
 
 @stop
