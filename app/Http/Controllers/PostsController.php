@@ -3,13 +3,12 @@
 namespace App\Http\Controllers;
 
 // use Illuminate\Http\Request;
-use Request;
-
 use App\Post;
 
 use Carbon\Carbon;
 
 use App\Http\Requests;
+use App\Http\Requests\CreatePostRequest;
 use App\Http\Controllers\Controller;
 
 class PostsController extends Controller
@@ -44,14 +43,13 @@ class PostsController extends Controller
     	return view('posts.create'); 
     }
 
-    public function store()
+    public function store(CreatePostRequest $request)
     {
         // Create and save a post and redirect to posts ie blogroll
-        Post::create(Request::all());
+        Post::create($request->all());
 
         return redirect('posts');
 
     }
-
 
 }

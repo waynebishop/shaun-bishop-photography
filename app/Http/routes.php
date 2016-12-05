@@ -12,3 +12,5 @@ Route::get('posts/{id}', 'PostsController@show');
 
 Route::post('posts', 'PostsController@store');
 
+
+
