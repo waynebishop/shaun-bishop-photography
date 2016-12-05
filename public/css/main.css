@@ -1,0 +1,107 @@
+body {
+    padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+	font-family: forum, Georgia, serif;
+}
+
+.portfolio-item {
+    margin-bottom: 25px;
+}
+
+.page-header {
+	color: #29263f;
+	font-family: forum, Georgia, serif;
+	font-weight: 800;
+}
+
+p {
+	font-size: 18px;
+	color: #000;
+}
+
+.gallery-row {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+footer {
+    margin: 50px 0;
+}
+
+#navbar-logo img {
+	height: 50px;
+}
+
+.navbar-header {
+	height: 70px;
+	background-color: #29263f;
+}
+
+.navbar-inverse {
+	background-color: #29263f;	
+}
+
+.navbar-nav li {
+	font-family: garamond;
+	font-size: 22px;
+	padding-top: 10px;
+	color: #bab9c3;
+
+}
+
+/*Slider Pro*/
+
+.slider-pro {
+    font-family: 'forum', Georgia, serif;
+}
+
+#SBPslider .sp-selected-thumbnail {
+	border: 4px solid #000;
+}
+
+.links {
+	text-align: center;
+	margin-top: 10px;
+}
+
+/* End */
+
+.gallery-header {
+	text-align: center;
+}
+
+#my-slider {
+	margin-left: -15px;
+	margin-right: -15px;
+}
+
+.slider-top {
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+}
+
+.sp-purple {
+	color: #FFF;
+	background: rgb(41, 38, 63);
+	background: rgba(41, 38, 63, 0.7);
+}
+
+.post-left {
+	padding-right: 15px;
+}
+
+.post-right {
+	padding-left: 15px;
+}
+
+.post-bottom {
+	margin-bottom: 15px;
+}
+
+.post-row {
+	margin-bottom: 20px;
+}
+
+.search-well {
+	padding-bottom: 22px;
+}
