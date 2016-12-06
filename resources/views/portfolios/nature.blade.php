@@ -1,5 +1,7 @@
 @extends('app')
 
+@section('title', '| Nature Portfolio')
+
 @section('content')
 
 <!-- Page Heading -->

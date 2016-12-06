@@ -1,5 +1,7 @@
 @extends('app')
 
+@section('title', '| Sport Portfolio')
+
 @section('content')
 
 <!-- Page Heading -->

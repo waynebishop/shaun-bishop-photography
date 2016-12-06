@@ -1,5 +1,7 @@
 @extends('app')
 
+@section('title', '| Blog Edit Post')
+
 @section('content')
 	<h1>Edit: {!! $post->title !!} </h1>
 

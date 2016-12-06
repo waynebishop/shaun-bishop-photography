@@ -1,5 +1,7 @@
 @extends('app')
 
+@section('title', '| Home Page')
+
 @section('content')
 
 <!-- Page Content -->

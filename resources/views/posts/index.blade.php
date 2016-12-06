@@ -1,5 +1,7 @@
 @extends('app')
 
+@section('title', '| Blog Post Index')
+
 @section('content')
 
 	<h1>Posts</h1>

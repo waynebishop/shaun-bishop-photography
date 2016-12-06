@@ -1,5 +1,7 @@
 @extends('app')
 
+@section('title', '| Scenic Portfolio')
+
 @section('content')
 
 <!-- Page Heading -->

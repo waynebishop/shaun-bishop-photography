@@ -1,5 +1,7 @@
 @extends('app')
 
+@section('title', '| View Gallery')
+
 @section('stylesheets')
 
 <link rel="stylesheet" type="text/css" href="/dist/css/slider-pro.min.css" media="screen"/>
