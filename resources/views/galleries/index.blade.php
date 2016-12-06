@@ -33,7 +33,7 @@
 	});
 </script>
 
-@stop end <!-- scripts section -->
+@stop <!-- end scripts section -->
 
 
 
