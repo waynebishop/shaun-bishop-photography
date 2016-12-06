@@ -23,6 +23,15 @@ class CreatePostsTable extends Migration
             $table->enum('post_status', ['Pending', 'Published']);
             $table->timestamps();
             $table->timestamp('published_at');
+
+            $table->foreign('gallery_id')
+                    ->references('id')
+                    ->on('galleries');
+
+            $table->foreign('user_id')
+                    ->references('id')
+                    ->on('users');
+
         });
     }
 

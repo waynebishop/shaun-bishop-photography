@@ -1,3 +1,8 @@
+<!-- Temporary -->
+{!! Form::hidden('user_id', 1) !!}
+{!! Form::hidden('gallery_id', 1) !!}
+{!! Form::hidden('post_type', 'Sport') !!}	
+
 <!-- title input -->
 <div class="form-group">
 	{!! Form::label('title', 'Title:') !!}

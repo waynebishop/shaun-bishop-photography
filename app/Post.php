@@ -13,7 +13,9 @@ class Post extends Model
     	'body',
     	'post_type',
     	'post_status',
-    	'published_at'
+    	'published_at',
+        'user_id', // Temporary!!
+        'gallery_id' // Temporary!!
     ];
 
     protected $dates =['published_at'];
@@ -36,4 +38,13 @@ class Post extends Model
     {
     	$this->attributes['published_at'] = Carbon::parse($date);
     }
+
+    // An article is owned by a user
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
+
+
+
 }
