@@ -3,6 +3,8 @@
 <head>
 	
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	
 	<title>Document Title</title>
 	<!-- Bootstrap CDN -->
 	<!-- Latest compiled and minified CSS -->
@@ -13,6 +15,10 @@
 
     <!-- Custom CSS -->
     <link href="/css/main.css" rel="stylesheet">
+
+	@yield('stylesheets')
+
+    @yield('scripts')    
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
