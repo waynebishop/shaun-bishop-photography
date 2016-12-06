@@ -16,6 +16,8 @@ Route::get('portfolios/people', 'PortfoliosController@people');
 
 Route::get('portfolios/other', 'PortfoliosController@other');
 
+Route::get('galleries', 'GalleriesController@index');
+
 
 // Route::get('posts', 'PostsController@index');
 
