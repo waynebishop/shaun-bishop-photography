@@ -52,6 +52,15 @@
 
 <hr>
 
+<!-- Experimenting with PHP counter -->
+
+<?php
+
+$var = (count($posts));
+echo with($var);
+
+?>
+
 @foreach ($posts as $post)
 	<article>
 
