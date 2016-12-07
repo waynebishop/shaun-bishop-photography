@@ -32,8 +32,54 @@
 
         <p>{{ $post->body }}</p>
 
+
+        <div id="disqus_thread"></div>
+
+        <script>
+
+        /**
+        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+        /*
+        var disqus_config = function () {
+        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        */
+        (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = '//shaunbishopphotography.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         <!-- Comments Form -->
-        <div class="well">
+        <!-- <div class="well">
             <h4>Leave a Comment:</h4>
             <form role="form">
                 <div class="form-group">
@@ -43,12 +89,12 @@
             </form>
         </div>
 
-        <hr>
+        <hr> -->
 
         <!-- Posted Comments -->
 
         <!-- Comment 1 -->
-        <div class="media">
+        <!-- <div class="media">
             <a class="pull-left" href="#">
                 <img class="media-object" src="http://placehold.it/64x64" alt="">
             </a>
@@ -58,10 +104,10 @@
                 </h4>
                 Fair dinkum this is the best post I have ever read. Can't wait for the next game.
             </div>
-        </div>
+        </div> -->
 
         <!-- Comment 2 -->
-        <div class="media">
+        <!-- <div class="media">
             <a class="pull-left" href="#">
                 <img class="media-object" src="http://placehold.it/64x64" alt="">
             </a>
@@ -71,10 +117,10 @@
                 </h4>
                 Good knock mate. Keep it up.
             </div>
-        </div>
+        </div> -->
 
         <!-- Comment 3 -->
-        <div class="media">
+        <!-- <div class="media">
             <a class="pull-left" href="#">
                 <img class="media-object" src="http://placehold.it/64x64" alt="">
             </a>
@@ -84,11 +130,11 @@
                 </h4>
                 Well done. Good to see the old fella has still got it.
             </div>
-        </div>
+        </div> -->
 
-        <hr> 
+        <!-- <hr> 
 
-        <a class="btn btn-primary" href="#">More Comments <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span></a>
+        <a class="btn btn-primary" href="#">More Comments <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span></a> -->
         
         <hr>
 
@@ -97,29 +143,5 @@
     </div>
 
 </div>    
-
-<hr>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	<h1>{{ $post->title }}</h1>
-
-	<article>
-		{{ $post->intro }}
-	</article>
 
 @stop
