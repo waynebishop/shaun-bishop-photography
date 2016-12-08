@@ -105,9 +105,9 @@ $postcounter = 0;
 
 	</div> <!-- Close Post Row 1 -->
 
-    <!-- If $postcounter is 1 then show Post Row Image RIGHT  -->
+    <!-- If $postcounter is not 0 ie is 1 then show Post Row Image RIGHT  -->
 
-    @elseif ($postcounter === 1)
+    @else 
 
     <!-- Post Row 2 -->    
     <div class="row post-row">
