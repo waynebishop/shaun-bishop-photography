@@ -87,9 +87,9 @@ $postcounter = 0;
 	        <h2 class="text-left"><a href="/posts/{{ $post->id }}">{{ $post->title }}</a></h2>
 	        <p class="text-left"><a href="#" class="btn btn-xs btn-primary"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> Sport</a><small> Author: <span>Shaun Bishop</span></p>
 	        <p>Created: <span>{{ $post->created_at }}</span> Updated: <span>{{ $post->updated_at }}</span></small></p>
-	        <p class="lead text-left">{{ $post->intro }}</p>
+	        <p class="text-left">{{ substr($post->intro, 0, 180) }}{{ strlen($post->intro) > 180 ? '...' : "" }}</p>
 	        <a href="/posts/{{ $post->id }}" class="btn btn-info btn-md pull-left">Read More</a>
-            <a href="/posts/{{ $post->id }}#disqus_thread" class="btn btn-default btn-md pull-left">Comment Count</a>         
+            <!-- <a href="/posts/{{ $post->id }}#disqus_thread" class="btn btn-default btn-md pull-left">Comment Count</a> -->         
 	    </div>
 
 	    <!-- Text for SM and XS Screens -->
@@ -97,9 +97,9 @@ $postcounter = 0;
 	        <h2 class="text-center"><a href="/posts/{{ $post->id }}">{{ $post->title }}</a></h2>
 	        <p><a href="#" class="btn btn-xs btn-primary"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> Sport</a><small> Author: <span>Shaun Bishop</span></p>
 	        <p>Created: <span>{{ $post->created_at }}</span>Updated: <span>{{ $post->updated_at }}</span></small></p>
-	        <p>{{ $post->intro }}</p>
+	        <p>{{ substr($post->intro, 0, 180) }}{{ strlen($post->intro) > 180 ? '...' : "" }}</p>
 	        <a href="/posts/{{ $post->id }}" class="btn btn-info pull-left">Read More</a>
-            <a href="/posts/{{ $post->id }}#disqus_thread" class="btn btn-default btn-md pull-left">Comment Count</a>
+            <!-- <a href="/posts/{{ $post->id }}#disqus_thread" class="btn btn-default btn-md pull-left">Comment Count</a> -->
 
 	    </div>
 
@@ -116,9 +116,9 @@ $postcounter = 0;
             <h2 class="text-right"><a href="/posts/{{ $post->id }}">{{ $post->title }}</a></h2>
             <p class="text-right"><a href="#" class="btn btn-xs btn-primary"><span class="glyphicon glyphicon-camera" aria-hidden="true"></span> Photography</a><small> Author: <span>Shaun Bishop</span></p>
             <p class="text-right">Created: <span>{{ $post->created_at }}</span>Updated: <span>{{ $post->updated_at }}</span></small></p>
-            <p class="lead text-right">{{ $post->intro }}</p>
+                <p class="text-right">{{ substr($post->intro, 0, 180) }}{{ strlen($post->intro) > 180 ? '...' : "" }}</p>
             <a href="/posts/{{ $post->id }}" class="btn btn-info pull-right">Read More</a>
-            <a href="/posts/{{ $post->id }}#disqus_thread" class="btn btn-default btn-md pull-right">Comment Count</a> 
+            <!-- <a href="/posts/{{ $post->id }}#disqus_thread" class="btn btn-default btn-md pull-right">Comment Count</a> --> 
         </div>
         
         <!-- Image for Post -->
@@ -133,9 +133,9 @@ $postcounter = 0;
             <h2 class="text-center"><a href="/posts/{{ $post->id }}">{{ $post->title }}</a></h2>
             <p><a href="#" class="btn btn-xs btn-primary"><span class="glyphicon glyphicon-camera" aria-hidden="true"></span> Photography</a><small> Author: <span>Shaun Bishop</span></p>
             <p> Created: <span>{{ $post->created_at }}</span>Updated: <span>{{ $post->updated_at }}</span></small></p>
-            <p>{{ $post->intro }}</p> 
+            <p>{{ substr($post->intro, 0, 180) }}{{ strlen($post->intro) > 180 ? '...' : "" }}</p> 
             <a href="/posts/{{ $post->id }}" class="btn btn-info">Read More</a>
-            <a href="/posts/{{ $post->id }}#disqus_thread" class="btn btn-default btn-md">Comment Count</a> 
+            <!-- <a href="/posts/{{ $post->id }}#disqus_thread" class="btn btn-default btn-md">Comment Count</a> --> 
         </div>
 
     </div> <!-- Close Post Row 2 -->
