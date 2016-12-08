@@ -45,8 +45,9 @@
 <div class="container">
 	<div class="row">
 		<div class="col-sm-12">
-			<h1 class="gallery-header">Gallery Example</h1>
-			<h2 class="gallery-header">A fine day for a game of cricket</h2>
+			<h2 class="gallery-header">Gallery Example</h2>
+			
+			<!--<h2 class="gallery-header">A fine day for a game of cricket</h2>  -->
 		</div>
 	</div>
 </div>	
