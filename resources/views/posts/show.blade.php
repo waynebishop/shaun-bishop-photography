@@ -22,7 +22,7 @@
             <img class="img-responsive img-rounded" src="/img/andyBatsman_Medium.jpg" alt="">
         </a>
 
-        <h2 class="text-center">{{ $post->title }}<a href="gallery_slider.html" class="btn btn-xs btn-info pull-right"><span class="glyphicon glyphicon-film" aria-hidden="true"></span> Gallery</a></h2>
+        <h2 class="text-center">{{ $post->title }}<a href="/galleries" class="btn btn-xs btn-info pull-right"><span class="glyphicon glyphicon-film" aria-hidden="true"></span> Gallery</a></h2>
         
         <p><a href="#" class="btn btn-xs btn-primary"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> SPORT</a><small> Author: <span>Shaun Bishop </span></p>
         
@@ -55,27 +55,6 @@
         </script>
         <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
                                 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         <!-- Comments Form -->
@@ -138,7 +117,7 @@
         
         <hr>
 
-        <a href="blog_roll.html" class="btn btn-info pull-left"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Back</a>
+        <a href="/posts" class="btn btn-info pull-left"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Back</a>
 
     </div>
 
