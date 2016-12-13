@@ -48,6 +48,8 @@ class PostsController extends Controller
     public function store(PostRequest $request)
     {
         // Create a new gallery and get the ID
+        // Gallery::create($request->all());
+        
 
 
         // Create and save a post and redirect to posts ie blogroll
