@@ -8,8 +8,10 @@
 	<hr>
 
 		
-			{!! Form::open(['url' => 'posts']) !!}
+			{!! Form::open(['url' => 'posts', 'files' => true]) !!}
+
 				@include ('posts._form', ['submitButtonText' => 'Add Post'])
+				
 			{!! Form::close() !!}
 
 			@include ('errors/list')

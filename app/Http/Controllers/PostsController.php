@@ -47,8 +47,14 @@ class PostsController extends Controller
 
     public function store(PostRequest $request)
     {
+        // Create a new gallery and get the ID
+
+
         // Create and save a post and redirect to posts ie blogroll
         Post::create($request->all());
+
+        // Loop over all images and upload with Intervention Image
+        // Each loop will need a query to run (insert image file name and gallery ID)
 
         return redirect('posts');
 

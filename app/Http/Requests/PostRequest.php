@@ -16,6 +16,16 @@ class PostRequest extends Request
         return true;
     }
 
+//     protected function getValidatorInstance()
+// {
+//     $validator = parent::getValidatorInstance();
+
+
+//     $validator->each('files', ['images']);
+
+//     return $validator;
+// }
+
     /**
      * Get the validation rules that apply to the request.
      *
@@ -27,7 +37,8 @@ class PostRequest extends Request
             'title' => 'required|min:3',
             'intro' => 'required|min:3',
             'body' => 'required|min:3',
-            'published_at' => 'required|date'
+            'published_at' => 'required|date',
+            'images' => 'required|image',
 
         ];
     }

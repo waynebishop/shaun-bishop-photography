@@ -27,6 +27,12 @@
 	{!! Form::input('date','published_at', date('Y-m-d'), ['class' => 'form-control']) !!}			
 </div>
 
+<!-- Image -->
+<div class="form-group">
+	{!! Form::label('images', 'Add gallery images:') !!}
+	{!! Form::file('images', ['multiple']); !!}			
+</div>
+
 <!-- Submit button -->
 <div class="form-group">
 	{!! Form::submit($submitButtonText, ['class' => 'btn btn-primary form-control']) !!}			
