@@ -48,7 +48,9 @@ class PostsController extends Controller
     public function store(PostRequest $request)
     {
         // Create a new gallery and get the ID
-        // Gallery::create($request->all());
+        Gallery::create($request->all());
+        $insertedId = $gallery->id;
+        dd($insertedId);
         
 
 
@@ -77,10 +79,5 @@ class PostsController extends Controller
         return redirect('posts');
 
     }
-
-
-
-
-
 
 }
