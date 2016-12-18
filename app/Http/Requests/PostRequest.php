@@ -38,7 +38,7 @@ class PostRequest extends Request
             'intro' => 'required|min:3',
             'body' => 'required|min:3',
             'published_at' => 'required|date',
-            'images' => 'required|image',
+            // 'images' => 'required|image',
             'gallery_title' => 'required|min:3',
             'gallery_cat' => 'required',
 

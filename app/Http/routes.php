@@ -28,6 +28,14 @@ Route::get('portfolios/people', 'PortfoliosController@people');
 
 Route::get('portfolios/other', 'PortfoliosController@other');
 
+
+Route::get('gallery/list', 'GalleryController@viewGalleryList');
+Route::post('gallery/save', 'GalleryController@saveGallery');
+Route::get('gallery/view/{id}', 'GalleryController@viewGalleryPics');
+Route::Post('image/do-upload', 'GalleryController@doImageUpload');
+
+
+
 Route::get('galleries', 'GalleriesController@index');
 
 

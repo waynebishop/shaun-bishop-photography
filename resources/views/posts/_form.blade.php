@@ -46,10 +46,10 @@
 </div>
 
 <!-- Image -->
-<div class="form-group">
+<!-- <div class="form-group">
 	{!! Form::label('images', 'Add gallery images:') !!}
 	{!! Form::file('images', ['multiple']); !!}			
-</div>
+</div> -->
 
 <!-- Submit button -->
 <div class="form-group">

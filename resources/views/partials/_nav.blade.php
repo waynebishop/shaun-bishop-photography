@@ -41,6 +41,7 @@
                      <ul class="dropdown-menu">
                         <li><a href="#">Account</a></li>
                         <li><a href="#">Admin</a></li>
+                        <li><a href="{{url('gallery/list/')}}">Gallery Admin</a></li>
                         <li><a href="#">Logout</a></li>                    
                      </ul>
                 </li> 

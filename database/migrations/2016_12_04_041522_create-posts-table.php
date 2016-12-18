@@ -26,7 +26,7 @@ class CreatePostsTable extends Migration
 
             $table->foreign('gallery_id')
                     ->references('id')
-                    ->on('galleries');
+                    ->on('gallery');
 
             $table->foreign('user_id')
                     ->references('id')
