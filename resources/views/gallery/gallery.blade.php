@@ -35,11 +35,20 @@
 
 
 	<div class="col-md-4">
+		@if (count($errors) > 0)
+			<div class="alert alert-danger">
+				<ul>
+					@foreach ($errors->all() as $error)
+					<li>{{ $error }}</li>
+					@endforeach
+				</ul>
+			</div>
+		@endif
 		<form class="form" method="POST" action="{{url('gallery/save')}}">
 			<input type="hidden" name="_token" value="{{ csrf_token() }}">
 
 			<div class="form-group">
-				<input type="text" name="gallery_name" id="gallery_name" placeholder="Name of the gallery" class="form-control">
+				<input type="text" name="gallery_name" id="gallery_name" placeholder="Name of the gallery" class="form-control" value="{{ old('gallery_name') }}">
 			</div>
 
 			<button class="btn btn-primary">Save</button>		

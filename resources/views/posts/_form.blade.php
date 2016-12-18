@@ -1,5 +1,5 @@
 <!-- Temporary -->
-{!! Form::hidden('user_id', 1) !!}
+{!! Form::hidden('user_id', 2) !!}
 {!! Form::hidden('gallery_id', 1) !!}
 {!! Form::hidden('post_type', 'Sport') !!}	
 

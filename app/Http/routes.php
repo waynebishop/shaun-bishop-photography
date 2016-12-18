@@ -2,6 +2,16 @@
 
 Route::get('/', 'HomeController@index');
 
+Route::get('users/login', function () {
+	return view('users/login');
+});
+
+Route::post('user/do-login', 'Auth\AuthController@doLogin');
+Route::get('users/logout', function() {
+	Auth::logout();
+	return redirect('/');
+});
+
 
 // Authentication routes
 // Route::get('auth/login', 'Auth\AuthController@getLogin');

@@ -39,10 +39,11 @@
                 <li class="dropdown">
                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin <span class="caret"></span></a>
                      <ul class="dropdown-menu">
+                        <li><a href="{{url('users/login/')}}">Login</a></li>
+                        <li><a href="{{url('users/logout/')}}">Logout</a></li>
                         <li><a href="#">Account</a></li>
                         <li><a href="{{url('posts/create/')}}">Blog Admin</a></li>
-                        <li><a href="{{url('gallery/list/')}}">Gallery Admin</a></li>
-                        <li><a href="#">Logout</a></li>                    
+                        <li><a href="{{url('gallery/list/')}}">Gallery Admin</a></li>                                            
                      </ul>
                 </li> 
             </ul>
