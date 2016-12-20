@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
-
 use App\Gallery;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+use Intervention\Image\Facades\Image;
+
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -73,7 +74,22 @@ class GalleryController extends Controller
         $filename = uniqid() . $file->getClientOriginalName();
         
         // move the file to correct location
+        // check if images folder exists first and make one if not
+        if (!file_exists('gallery/images')) {
+            mkdir('gallery/images', 0777, true);     
+        }
+
+        // Now save image to images folder
         $file->move('gallery/images', $filename);
+
+        // check if thumbs folder exists first and make one if not
+        // if (!file_exists('gallery/images/thumbs')) {
+        //     mkdir('gallery/images/thumbs', 0777, true);
+        // }
+
+        // Now save thumb sive image to thumbs folder
+        $thumb = Image::make('gallery/images/' . $filename)->resize('240,160')->save('gallery/images/thumbs/' . $filename, 50);
+        
         
         // save the image details into the database
         $gallery = Gallery::find($request->input('gallery_id'));
@@ -106,6 +122,7 @@ class GalleryController extends Controller
         // delete the images
         foreach ($currentGallery->images as $image) {
             unlink(public_path($image->file_path));
+            unlink(public_path('gallery/images/thumbs/' . $image->file_name));
         }
 
         // delete the DB records
