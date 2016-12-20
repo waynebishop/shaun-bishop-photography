@@ -46,6 +46,7 @@ Route::get('gallery/view/{id}', 'GalleryController@viewGalleryPics');
 Route::Post('image/do-upload', 'GalleryController@doImageUpload');
 
 Route::get('gallery/portfolioall', 'GalleryController@viewGalleryPortfolioAll');
+Route::get('gallery/viewonly/{id}', 'GalleryController@viewGalleryPicsOnly');
 
 
 

@@ -19,6 +19,17 @@ class GalleryController extends Controller
         $this->middleware('auth');
     }
 
+    // This is just to view a Portfolio only with no admin
+    public function viewGalleryPortfolioAll()
+    {
+        $galleries = Gallery::all();
+
+        // $galleries = Gallery::where('created_by', Auth::user()->id)->get();
+
+        return view('gallery.gallery-portfolio')
+        ->with('galleries', $galleries);
+    }
+
     public function viewGalleryList()
     {
     	// $galleries = Gallery::all();
@@ -63,6 +74,15 @@ class GalleryController extends Controller
 
     	return view('gallery.gallery-view')
     	->with('gallery', $gallery);  
+    }
+
+    // This is to just view  a gallery with no admin
+    public function viewGalleryPicsOnly($id)
+    {
+        $gallery = Gallery::findOrFail($id);
+
+        return view('gallery.gallery-viewonly')
+        ->with('gallery', $gallery);  
     }
 
     public function doImageUpload(Request $request)
