@@ -22,8 +22,14 @@
 				<tbody>
 					@foreach ($galleries as $gallery)
 					<tr>
-						<td>{{$gallery->name}}</td>
-						<td><a href="{{url('gallery/view/' . $gallery->id)}}">View</a></td>
+						<td>{{$gallery->name}}
+							<span class="pull-right">
+								{{ $gallery->images()->count() }}
+							</span>
+						</td>
+						<td><a href="{{url('gallery/view/' . $gallery->id)}}">View</a> / 
+							<a href="{{url('gallery/delete/' . $gallery->id)}}">Delete</a>
+						</td>
 					</tr>
 					@endforeach
 				</tbody>
@@ -44,11 +50,22 @@
 				</ul>
 			</div>
 		@endif
+		<h2>Create a new Gallery:</h2>
 		<form class="form" method="POST" action="{{url('gallery/save')}}">
 			<input type="hidden" name="_token" value="{{ csrf_token() }}">
 
 			<div class="form-group">
 				<input type="text" name="gallery_name" id="gallery_name" placeholder="Name of the gallery" class="form-control" value="{{ old('gallery_name') }}">
+			</div>
+
+			<!-- Gallery Category -->
+			<div class="form-group">
+				{!! Form::label('gallery_cat', 'Gallery Category:') !!}
+				{!! Form::select('gallery_cat',[
+			    	'Blogpost' => ['Blogpost' => 'Blogpost'],
+			    	'Homepage' => ['Homepage' => 'Homepage'],
+			    	'Portfolio' => ['Sport' => 'Sport', 'Nature' => 'Nature', 'Scenic' => 'Scenic', 'People' => 'People', 'Other' => 'Other'],
+				]); !!}
 			</div>
 
 			<button class="btn btn-primary">Save</button>		

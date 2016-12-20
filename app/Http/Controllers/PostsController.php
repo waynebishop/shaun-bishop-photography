@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 // use Illuminate\Http\Request;
 use App\Post;
+use Illuminate\Support\Facades\Auth;
 
 use Carbon\Carbon;
 
@@ -39,6 +40,11 @@ class PostsController extends Controller
 
     	return view('posts.show', compact('post'));	
     }
+
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
 
     public function create()
     {

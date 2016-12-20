@@ -13,17 +13,22 @@
 	<!-- Bootstrap Core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
 
+	<script type="text/javascript">
+		var baseUrl = "{{ url('/') }}"; 
+	</script>
+
+	<!-- Dropzone CSS CDN -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/min/dropzone.min.css">
+
     <!-- Custom CSS -->
     <link href="/css/main.css" rel="stylesheet">
+
+    <!-- Lightbox CSS file -->
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/lightbox.css') }}">
 
 	@yield('stylesheets')
 
     @yield('scripts')
-
-
-    <script type="text/javascript">
-    	var baseURL = "{{ url('/') }}";
-    </script>    
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -57,6 +62,13 @@
 
 	<!-- jQuery -->
     <script src="/js/jquery.js"></script>
+
+    <!-- Lightbox JS -->
+	<script type="text/javascript" src="{{ asset('js/lightbox.min.js') }}"></script>
+
+	<!-- Dropzone JS -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/min/dropzone.min.js"></script>
+
 	<!-- Custom JS -->
     <script type="text/javascript" src="/js/app.js"></script>
 

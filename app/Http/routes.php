@@ -41,6 +41,7 @@ Route::get('portfolios/other', 'PortfoliosController@other');
 
 Route::get('gallery/list', 'GalleryController@viewGalleryList');
 Route::post('gallery/save', 'GalleryController@saveGallery');
+Route::get('gallery/delete/{id}', 'GalleryController@deleteGallery');
 Route::get('gallery/view/{id}', 'GalleryController@viewGalleryPics');
 Route::Post('image/do-upload', 'GalleryController@doImageUpload');
 

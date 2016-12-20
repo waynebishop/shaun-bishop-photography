@@ -12,4 +12,10 @@ class Gallery extends Model
 	* @var string
 	*/
 	protected $table = 'gallery';
+
+	public function images()
+	{
+		return $this->hasMany('App\Image'); 
+	}
+
 }

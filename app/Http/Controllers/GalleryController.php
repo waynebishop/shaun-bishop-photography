@@ -12,9 +12,17 @@ use App\Http\Controllers\Controller;
 
 class GalleryController extends Controller
 {
+    
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function viewGalleryList()
     {
-    	$galleries = Gallery::all();
+    	// $galleries = Gallery::all();
+
+        $galleries = Gallery::where('created_by', Auth::user()->id)->get();
 
     	return view('gallery.gallery')
     	->with('galleries', $galleries);
@@ -39,6 +47,7 @@ class GalleryController extends Controller
 
     	// Save a new Gallery
     	$gallery->name = $request->input('gallery_name');
+        $gallery->gallery_cat = $request->input('gallery_cat');
     	$gallery->created_by = Auth::user()->id;
     	$gallery->published = 1;
     	$gallery->save();
@@ -57,8 +66,58 @@ class GalleryController extends Controller
 
     public function doImageUpload(Request $request)
     {
+        // get the file form the post request
+        $file = $request->file('file');
+        
+        // set my file name
+        $filename = uniqid() . $file->getClientOriginalName();
+        
+        // move the file to correct location
+        $file->move('gallery/images', $filename);
+        
+        // save the image details into the database
+        $gallery = Gallery::find($request->input('gallery_id'));
+        $image = $gallery->images()->create([
+            'gallery_id' => $request->input('gallery_id'),
+            'file_name' => $filename,
+            'file_size' => $file->getClientSize(),
+            'file_mime' => $file->getClientMimeType(),
+            'file_path' => 'gallery/images/' . $filename,
+            'created_by' => Auth::user()->id,
+        ]);
 
+        return $image;
+
+    }
+
+    public function deleteGallery($id)
+    {
+        // Load the gallery
+        $currentGallery = Gallery::findOrFail($id);
+
+        // check ownership as get ID from URL
+        if ($currentGallery->created_by != Auth::user()->id) {
+            abort('403', 'You are not allowed ot delete this gallery');
+        }
+
+        // get the images
+        $images = $currentGallery->images();
+
+        // delete the images
+        foreach ($currentGallery->images as $image) {
+            unlink(public_path($image->file_path));
+        }
+
+        // delete the DB records
+        $currentGallery->images()->delete();
+
+        $currentGallery->delete();
+
+        // redirect back
+        return redirect()->back();
 
     }    
 
 }
+
+
