@@ -15,7 +15,8 @@
 				<thead>
 					<tr class="info">
 						<th>Name of the gallery</th>
-						<th></th>
+						<th>Portfolio</th>
+						<th>Maintain</th>
 					</tr>
 				</thead>
 
@@ -27,6 +28,9 @@
 								{{ $gallery->images()->count() }}
 							</span>
 						</td>
+
+						<td>{{$gallery->gallery_cat}}</td>
+
 						<td><a href="{{url('gallery/view/' . $gallery->id)}}">View</a> / 
 							<a href="{{url('gallery/delete/' . $gallery->id)}}">Delete</a>
 						</td>

@@ -20,7 +20,7 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Portfolio <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="{{url('gallery/portfolioall/')}}">All</a></li>
-                        <li><a href="/portfolios/sport">Sport</a></li>
+                        <li><a href="{{url('gallery/portfoliosport/')}}">Sport</a></li>
                         <li><a href="/portfolios/nature">Nature</a></li>
                         <li><a href="/portfolios/scenic">Scenic</a></li>
                         <li><a href="/portfolios/people">People</a></li>

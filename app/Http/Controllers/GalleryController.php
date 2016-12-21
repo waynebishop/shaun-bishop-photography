@@ -19,12 +19,25 @@ class GalleryController extends Controller
         $this->middleware('auth');
     }
 
-    // This is just to view a Portfolio only with no admin
+    // This is just to view a Portfolio (All galleries) only with no admin
     public function viewGalleryPortfolioAll()
     {
         $galleries = Gallery::all();
 
+        // $portfolioName = 'All Galleries for Shaun';
+
         // $galleries = Gallery::where('created_by', Auth::user()->id)->get();
+
+        return view('gallery.gallery-portfolio')
+        ->with('galleries', $galleries);
+    }
+
+    // This is just to view the Sports Portfolio only with no admin
+    public function viewGalleryPortfolioSport()
+    {
+        // $galleries = Gallery::all();
+
+        $galleries = Gallery::where('gallery_cat', 'Sport')->get();
 
         return view('gallery.gallery-portfolio')
         ->with('galleries', $galleries);
