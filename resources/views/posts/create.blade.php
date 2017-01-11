@@ -7,13 +7,51 @@
 
 	<hr>
 
-		
-			{!! Form::open(['url' => 'posts', 'files' => true]) !!}
+	<!-- New create Gallery section -->
 
-				@include ('posts._form', ['submitButtonText' => 'Add Post'])
-				
-			{!! Form::close() !!}
+	<div class="col-md-12">
+		@if (count($errors) > 0)
+			<div class="alert alert-danger">
+				<ul>
+					@foreach ($errors->all() as $error)
+					<li>{{ $error }}</li>
+					@endforeach
+				</ul>
+			</div>
+		@endif
+		<h2>Create Gallery for Blog Post:</h2>
+		<form class="form" method="POST" action="{{url('gallery/save')}}">
+			<input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-			@include ('errors/list')
+			<div class="form-group">
+				<input type="text" name="gallery_name" id="gallery_name" placeholder="Name of the gallery" class="form-control" value="{{ old('gallery_name') }}">
+			</div>
+
+			<!-- Gallery Category -->
+			<div class="form-group">
+				{!! Form::label('gallery_cat', 'Gallery Category:') !!}
+				{!! Form::select('gallery_cat',[
+			    	'Blogpost' => ['Blogpost' => 'Blogpost'],
+			    	'Portfolio' => ['Sport' => 'Sport', 'Nature' => 'Nature', 'Scenic' => 'Scenic', 'People' => 'People', 'Other' => 'Other'],
+				]); !!}
+			</div>
+
+			<button class="btn btn-primary">Save</button>		
+		</form>
+
+		<hr>
+	</div>
+
+	<!-- End new Gallery section -->
+
+
+		{!! Form::open(['url' => 'posts', 'files' => true]) !!}
+
+			@include ('posts._form', ['submitButtonText' => 'Add Post'])
+			
+		{!! Form::close() !!}
+
+		@include ('errors/list')
+
 	
 @stop

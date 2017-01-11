@@ -3,6 +3,7 @@
 {!! Form::hidden('gallery_id', 18) !!}
 <!-- {!! Form::hidden('post_type', 'Sport') !!} -->	
 
+
 <!-- Blog Type -->
 <div class="form-group">
 	{!! Form::label('post_type', 'Blog Post Type:') !!}
