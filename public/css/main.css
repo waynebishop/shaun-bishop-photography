@@ -48,6 +48,14 @@ footer {
 
 }
 
+.portfolio-gallery-images img {
+	width: 90px;
+	height: 60px;
+	border: 2px solid black;
+	margin-bottom: 10px;
+
+}
+
 /*Slider Pro*/
 
 .slider-pro {
@@ -61,6 +69,10 @@ footer {
 .links {
 	text-align: center;
 	margin-top: 10px;
+}
+
+#portfolioThumb {
+
 }
 
 /* End */

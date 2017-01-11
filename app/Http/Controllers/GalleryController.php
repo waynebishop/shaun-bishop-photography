@@ -24,6 +24,8 @@ class GalleryController extends Controller
     {
         $galleries = Gallery::all();
 
+        $galleries->portfolioCat = 'All Galleries';
+
         // $portfolioName = 'All Galleries for Shaun';
 
         // $galleries = Gallery::where('created_by', Auth::user()->id)->get();
@@ -39,8 +41,10 @@ class GalleryController extends Controller
 
         $galleries = Gallery::where('gallery_cat', 'Sport')->get();
 
+        $galleries->portfolioCat = 'Sport Galleries';
+
         return view('gallery.gallery-portfolio')
-        ->with('galleries', $galleries);
+        ->with('galleries', $galleries);   
     }
 
     public function viewGalleryList()

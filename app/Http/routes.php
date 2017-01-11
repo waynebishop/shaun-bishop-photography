@@ -7,6 +7,7 @@ Route::get('users/login', function () {
 });
 
 Route::post('user/do-login', 'Auth\AuthController@doLogin');
+
 Route::get('users/logout', function() {
 	Auth::logout();
 	return redirect('/');
@@ -14,14 +15,14 @@ Route::get('users/logout', function() {
 
 
 // Authentication routes
-// Route::get('auth/login', 'Auth\AuthController@getLogin');
-// Route::get('auth/login', 'Auth\AuthController@postLogin');
-// Route::get('auth/logout', 'Auth\AuthController@getLogout');
+Route::get('auth/login', 'Auth\AuthController@getLogin');
+Route::get('auth/login', 'Auth\AuthController@postLogin');
+Route::get('auth/logout', 'Auth\AuthController@getLogout');
 
 
 // Registration routes
-// Route::get('auth/register', 'Auth\AuthController@getRegister');
-// Route::post('auth/register', 'Auth\AuthController@postRegister');
+Route::get('auth/register', 'Auth\AuthController@getRegister');
+Route::post('auth/register', 'Auth\AuthController@postRegister');
 
 
 Route::get('about', 'PagesController@about');
