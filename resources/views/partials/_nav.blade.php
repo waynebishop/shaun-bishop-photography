@@ -21,10 +21,10 @@
                     <ul class="dropdown-menu">
                         <li><a href="{{url('gallery/portfolioall/')}}">All</a></li>
                         <li><a href="{{url('gallery/portfoliosport/')}}">Sport</a></li>
-                        <li><a href="/portfolios/nature">Nature</a></li>
-                        <li><a href="/portfolios/scenic">Scenic</a></li>
-                        <li><a href="/portfolios/people">People</a></li>
-                        <li><a href="/portfolios/other">Other</a></li>                            
+                        <li><a href="{{url('gallery/portfolionature/')}}">Nature</a></li>
+                        <li><a href="{{url('gallery/portfolioscenic/')}}">Scenic</a></li>
+                        <li><a href="{{url('gallery/portfoliopeople/')}}">People</a></li>
+                        <li><a href="{{url('gallery/portfolioother/')}}">Other</a></li>                            
                     </ul>
                 </li>
                 <li>

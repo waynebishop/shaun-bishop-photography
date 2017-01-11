@@ -49,6 +49,12 @@ Route::Post('image/do-upload', 'GalleryController@doImageUpload');
 Route::get('gallery/portfolioall', 'GalleryController@viewGalleryPortfolioAll');
 Route::get('gallery/portfoliosport', 'GalleryController@viewGalleryPortfolioSport');
 
+Route::get('gallery/portfolionature', 'GalleryController@viewGalleryPortfolioNature');
+Route::get('gallery/portfolioscenic', 'GalleryController@viewGalleryPortfolioScenic');
+Route::get('gallery/portfoliopeople', 'GalleryController@viewGalleryPortfolioPeople');
+Route::get('gallery/portfolioother', 'GalleryController@viewGalleryPortfolioOther');
+
+
 
 Route::get('gallery/viewonly/{id}', 'GalleryController@viewGalleryPicsOnly');
 

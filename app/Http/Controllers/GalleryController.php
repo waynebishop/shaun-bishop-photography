@@ -47,6 +47,62 @@ class GalleryController extends Controller
         ->with('galleries', $galleries);   
     }
 
+        // This is just to view the Nature Portfolio only with no admin
+    public function viewGalleryPortfolioNature()
+    {
+        // $galleries = Gallery::all();
+
+        $galleries = Gallery::where('gallery_cat', 'Nature')->get();
+
+        $galleries->portfolioCat = 'Nature Galleries';
+
+        return view('gallery.gallery-portfolio')
+        ->with('galleries', $galleries);   
+    }
+
+    // This is just to view the Scenic Portfolio only with no admin
+    public function viewGalleryPortfolioScenic()
+    {
+        // $galleries = Gallery::all();
+
+        $galleries = Gallery::where('gallery_cat', 'Scenic')->get();
+
+        $galleries->portfolioCat = 'Scenic Galleries';
+
+        return view('gallery.gallery-portfolio')
+        ->with('galleries', $galleries);   
+    }
+
+    // This is just to view the People Portfolio only with no admin
+    public function viewGalleryPortfolioPeople()
+    {
+        // $galleries = Gallery::all();
+
+        $galleries = Gallery::where('gallery_cat', 'People')->get();
+
+        $galleries->portfolioCat = 'People Galleries';
+
+        return view('gallery.gallery-portfolio')
+        ->with('galleries', $galleries);   
+    }
+
+    // This is just to view the Sports Portfolio only with no admin
+    public function viewGalleryPortfolioOther()
+    {
+        // $galleries = Gallery::all();
+
+        $galleries = Gallery::where('gallery_cat', 'Other')->get();
+
+        $galleries->portfolioCat = 'Other Galleries';
+
+        return view('gallery.gallery-portfolio')
+        ->with('galleries', $galleries);   
+    }
+
+
+
+
+
     public function viewGalleryList()
     {
     	// $galleries = Gallery::all();

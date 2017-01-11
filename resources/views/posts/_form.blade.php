@@ -1,7 +1,17 @@
 <!-- Temporary -->
 {!! Form::hidden('user_id', 2) !!}
-{!! Form::hidden('gallery_id', 1) !!}
-{!! Form::hidden('post_type', 'Sport') !!}	
+{!! Form::hidden('gallery_id', 18) !!}
+<!-- {!! Form::hidden('post_type', 'Sport') !!} -->	
+
+<!-- Blog Type -->
+<div class="form-group">
+	{!! Form::label('post_type', 'Blog Post Type:') !!}
+	{!! Form::select('post_type',[
+    	'Photography' => 'Photography',
+    	'Sport' => 'Sport',
+    	'Other' => 'Other',
+		]); !!}
+</div>
 
 <!-- title input -->
 <div class="form-group">
