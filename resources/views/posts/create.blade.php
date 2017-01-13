@@ -39,6 +39,18 @@
 			<button class="btn btn-primary">Save</button>		
 		</form>
 
+		<?php
+
+		if(Session::has('data')) {
+		echo "Success";	
+		echo Session::get('data');
+		$galleryId = Session::get('data'); ?>
+		{!! Form::hidden('gallery_id', $galleryId) !!}
+		<?php
+		}
+
+		?>
+
 		<hr>
 	</div>
 

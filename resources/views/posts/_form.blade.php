@@ -1,8 +1,6 @@
 <!-- Temporary -->
 {!! Form::hidden('user_id', 2) !!}
 {!! Form::hidden('gallery_id', 18) !!}
-<!-- {!! Form::hidden('post_type', 'Sport') !!} -->	
-
 
 <!-- Blog Type -->
 <div class="form-group">
@@ -38,23 +36,23 @@
 	{!! Form::input('date','published_at', date('Y-m-d'), ['class' => 'form-control']) !!}			
 </div>
 
-<h2>Add Gallery:</h2>
+<!-- <h2>Add Gallery:</h2> -->
 
 <!-- Gallery Title -->
-<div class="form-group">
+<!-- <div class="form-group">
 	{!! Form::label('gallery_title', 'Gallery Title:') !!}
 	{!! Form::text('gallery_title', null, ['class' => 'form-control']) !!}	
-</div>
+</div> -->
 
 <!-- Gallery Category -->
-<div class="form-group">
+<!-- <div class="form-group">
 	{!! Form::label('gallery_cat', 'Gallery Category:') !!}
 	{!! Form::select('gallery_cat',[
     	'Blogpost' => ['Blogpost' => 'Blogpost'],
     	'Homepage' => ['Homepage' => 'Homepage'],
     	'Portfolio' => ['Sport' => 'Sport', 'Nature' => 'Nature', 'Scenic' => 'Scenic', 'People' => 'People', 'Other' => 'Other'],
 		]); !!}
-</div>
+</div> -->
 
 <!-- Image -->
 <!-- <div class="form-group">
