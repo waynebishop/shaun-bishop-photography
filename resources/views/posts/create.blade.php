@@ -19,6 +19,7 @@
 				</ul>
 			</div>
 		@endif
+		
 		<h2>Create Gallery for Blog Post:</h2>
 		<form class="form" method="POST" action="{{url('gallery/save')}}">
 			<input type="hidden" name="_token" value="{{ csrf_token() }}">
