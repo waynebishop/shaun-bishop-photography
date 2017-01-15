@@ -55,14 +55,20 @@
 						</td>
 						<td>{{$gallery->gallery_cat}}</td>
 						<td class="portfolio-gallery-images">
-							
-							@foreach ($gallery->images as $image)
+								
+								@if (count($gallery->images))
+
+								<img src="{{ url('/gallery/images/thumbs/' . $gallery->images[0]->file_name) }}">
+
+								@endif
+															
+<!-- 							@foreach ($gallery->images as $image)
 
 								<a href="{{url('gallery/viewonly/' . $gallery->id)}}">
 									<img src="{{ url('/gallery/images/thumbs/' . $image->file_name) }} " alt="gallery images">
 								</a>
 
-							@endforeach
+							@endforeach -->
 							
 						</td>
 						<td><a href="{{url('gallery/viewonly/' . $gallery->id)}}">View</a></td>
