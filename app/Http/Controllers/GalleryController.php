@@ -136,9 +136,14 @@ class GalleryController extends Controller
     	$gallery->created_by = Auth::user()->id;
     	$gallery->published = 1;
     	$gallery->save();
+
         $LastInsertId = $gallery->id;
+        $galleries = Gallery::where('created_by', Auth::user()->id)->get();
+
+
     	return redirect()->back()
         ->with('data', $LastInsertId)
+        ->with('galleries', $galleries)
         ->withInput();
 
     }
