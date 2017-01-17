@@ -27,6 +27,7 @@
 <div class="row">
 	<div class="col-md-12">
 		<h1>Portfolio: {{$galleries->portfolioCat}}</h1>
+		<hr>
 	</div>
 </div>
 
@@ -36,8 +37,7 @@
 			@foreach ($galleries as $gallery)
 
 				@if (count($gallery->images))
-
-				
+			
 					<div class="col-md-3">
 						<a href="{{url('gallery/viewonly/' . $gallery->id)}}">
 							<img class="portfolio-gallery-images" src="{{ url('/gallery/images/thumbs/' . $gallery->images[0]->file_name) }}">
@@ -51,8 +51,6 @@
 						
 					</div>
 			
-	
-
 				@endif
 
 			@endforeach		

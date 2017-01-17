@@ -55,8 +55,6 @@ Route::get('gallery/portfoliopeople', 'GalleryController@viewGalleryPortfolioPeo
 Route::get('gallery/portfolioother', 'GalleryController@viewGalleryPortfolioOther');
 Route::get('gallery/portfolioblogpost', 'GalleryController@viewGalleryPortfolioBlogpost');
 
-
-
 Route::get('gallery/viewonly/{id}', 'GalleryController@viewGalleryPicsOnly');
 
 

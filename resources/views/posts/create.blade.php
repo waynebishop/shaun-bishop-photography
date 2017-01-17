@@ -22,16 +22,16 @@
 
 	</div>
 
-	<h2>Create Gallery for Blog Post:</h2>
+<!-- 	<h2>Create Gallery for Blog Post:</h2>
 	<form class="form" method="POST" action="{{url('gallery/save')}}">
 		<input type="hidden" name="_token" value="{{ csrf_token() }}">
 
 		<div class="form-group">
 			<input type="text" name="gallery_name" id="gallery_name" placeholder="Name of the gallery" class="form-control" value="{{ old('gallery_name') }}">
-		</div>
+		</div> -->
 
 		<!-- Gallery Category -->
-		<div class="form-group">
+<!-- 		<div class="form-group">
 			{!! Form::label('gallery_cat', 'Gallery Category:') !!}
 			{!! Form::select('gallery_cat',[
 		    	'Blogpost' => ['Blogpost' => 'Blogpost'],
@@ -40,7 +40,7 @@
 		</div>
 
 		<button class="btn btn-primary">Save</button>		
-	</form>
+	</form> -->
 
 <?php
 

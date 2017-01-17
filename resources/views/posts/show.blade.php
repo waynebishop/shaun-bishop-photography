@@ -18,11 +18,26 @@
 <!-- Image for Post -->
 <div class="row post-row">
     <div class="col-sm-12 col-md-8 col-md-offset-2">            
-         <a href="/galleries">
+<!--          <a href="/galleries">
             <img class="img-responsive img-rounded" src="/img/andyBatsman_Medium.jpg" alt="">
-        </a>
+        </a> -->
 
-        <h2 class="text-center">{{ $post->title }}<a href="/galleries" class="btn btn-xs btn-info pull-right"><span class="glyphicon glyphicon-film" aria-hidden="true"></span> Gallery</a></h2>
+        @if ($galleries->count() > 0)
+            @foreach ($galleries as $gallery)
+
+                @if (count($gallery->images))
+
+                    <a href="/galleries">
+                        <img class="img-responsive img-rounded" src="{{ url('/gallery/images/thumbs/' . $gallery->images[0]->file_name) }}" alt="">
+                    </a>
+
+                @endif
+
+            @endforeach     
+
+        @endif
+
+        <h2 class="text-center">{{ $post->title }}<a href="{{url('gallery/viewonly/' . $post->gallery_id)}}" class="btn btn-xs btn-info pull-right"><span class="glyphicon glyphicon-film" aria-hidden="true"></span> Gallery</a></h2>
         
         <p><a href="#" class="btn btn-xs btn-primary"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> SPORT</a><small> Author: <span>Shaun Bishop </span></p>
         

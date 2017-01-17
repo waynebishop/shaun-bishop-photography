@@ -6,6 +6,8 @@ namespace App\Http\Controllers;
 use App\Post;
 use Illuminate\Support\Facades\Auth;
 
+use App\Gallery;
+
 use Carbon\Carbon;
 
 use Illuminate\Http\Request;
@@ -31,6 +33,10 @@ class PostsController extends Controller
         // Use findOrFail so that if no post for that ID then fail
     	$post = Post::findOrFail($id);
 
+        $blog_gallery = "$post->gallery_id";    
+
+        $galleries = Gallery::where('id', "$blog_gallery")->get();
+
         // Fun with Carbon show how can do "1 week from now" etc
         // dd($post->created_at->addDays(8)->diffForHumans());
         
@@ -38,7 +44,8 @@ class PostsController extends Controller
         // dd($post->published_at);
 
 
-    	return view('posts.show', compact('post'));	
+    	return view('posts.show', compact('post'))
+        ->with('galleries', $galleries);	
     }
 
     // public function __construct()
