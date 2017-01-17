@@ -48,9 +48,9 @@ footer {
 
 }
 
-.portfolio-gallery-images img {
-	width: 90px;
-	height: 60px;
+.portfolio-gallery-images {
+	width: 240px;
+	height: 160px;
 	border: 2px solid black;
 	margin-bottom: 10px;
 

@@ -33,50 +33,29 @@
 <div class="row">
 	<div class="col-md-12">
 		@if ($galleries->count() > 0)
+			@foreach ($galleries as $gallery)
 
-			<table class="table table-striped table-bordered table-responsive">
-				<thead>
-					<tr class="info">
-						<th>Name of the gallery</th>
-						<th>Portfolio</th>
-						<th>Thumbnails</th>
-						<th>View?</th>
-					</tr>
-				</thead>
+				@if (count($gallery->images))
+
 				
-				<tbody>
-					@foreach ($galleries as $gallery)
-					<tr>
+					<div class="col-md-3">
+						<a href="{{url('gallery/viewonly/' . $gallery->id)}}">
+							<img class="portfolio-gallery-images" src="{{ url('/gallery/images/thumbs/' . $gallery->images[0]->file_name) }}">
+						</a>
+						<br>
+						<a href="{{url('gallery/viewonly/' . $gallery->id)}}">{{$gallery->name}}</a>
+						<br>
+						<a class="btn btn-default" href="{{url('gallery/portfolio' . strtolower($gallery->gallery_cat))}}">{{$gallery->gallery_cat}}</a>
+						<a class="btn btn-primary" href="{{url('gallery/viewonly/' . $gallery->id)}}">View</a>
+						<hr>
+						
+					</div>
+			
+	
 
-						<td>{{$gallery->name}}
-							<span class="pull-right">
-								{{ $gallery->images()->count() }}
-							</span>
-						</td>
-						<td>{{$gallery->gallery_cat}}</td>
-						<td class="portfolio-gallery-images">
-								
-								@if (count($gallery->images))
+				@endif
 
-								<img src="{{ url('/gallery/images/thumbs/' . $gallery->images[0]->file_name) }}">
-
-								@endif
-															
-<!-- 							@foreach ($gallery->images as $image)
-
-								<a href="{{url('gallery/viewonly/' . $gallery->id)}}">
-									<img src="{{ url('/gallery/images/thumbs/' . $image->file_name) }} " alt="gallery images">
-								</a>
-
-							@endforeach -->
-							
-						</td>
-						<td><a href="{{url('gallery/viewonly/' . $gallery->id)}}">View</a></td>
-					</tr>
-					@endforeach
-				</tbody>
-
-			</table>		
+			@endforeach		
 
 		@endif
 	</div>

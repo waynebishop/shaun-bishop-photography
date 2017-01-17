@@ -54,17 +54,6 @@ $galleryId = Session::get('data'); ?>
 
 ?>
 
-<!-- Choose a gallery -->
-<div class="form-group">
-	{!! Form::label('gallery_id', 'Choose Gallery (required) :') !!}
-	{!! Form::select('gallery_id',[
-		@foreach ($galleries as $gallery)
-			'{{$gallery->id}}' => '{{$gallery->name}}',
-		@endforeach
-
-		]); !!}
-</div>
-
 <hr>
 
 <!-- End new Gallery section -->

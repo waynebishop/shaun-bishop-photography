@@ -99,6 +99,21 @@ class GalleryController extends Controller
         ->with('galleries', $galleries);   
     }
 
+    // This is just to view the Blog Portfolio only with no admin
+    public function viewGalleryPortfolioBlogpost()
+    {
+        // $galleries = Gallery::all();
+
+        $galleries = Gallery::where('gallery_cat', 'Blogpost')->get();
+
+        $galleries->portfolioCat = 'Blog Galleries';
+
+        return view('gallery.gallery-portfolio')
+        ->with('galleries', $galleries);   
+    }
+
+
+
 
 
 

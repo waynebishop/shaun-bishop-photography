@@ -53,6 +53,7 @@ Route::get('gallery/portfolionature', 'GalleryController@viewGalleryPortfolioNat
 Route::get('gallery/portfolioscenic', 'GalleryController@viewGalleryPortfolioScenic');
 Route::get('gallery/portfoliopeople', 'GalleryController@viewGalleryPortfolioPeople');
 Route::get('gallery/portfolioother', 'GalleryController@viewGalleryPortfolioOther');
+Route::get('gallery/portfolioblogpost', 'GalleryController@viewGalleryPortfolioBlogpost');
 
 
 
