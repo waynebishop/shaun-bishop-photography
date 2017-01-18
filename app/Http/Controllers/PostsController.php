@@ -23,9 +23,16 @@ class PostsController extends Controller
         // Only get Posts where published_at date is <= today. See Post.php model for the special scope "published"
     	$posts = Post::latest('published_at')->published()->get();
 
-    	return view('posts.index', compact('posts'));
+        $galleries = Gallery::where('gallery_cat', 'Blogpost')->get();
 
-		return view('posts.index');    	  	
+        // dd("$galleries");
+
+    	return view('posts.index', compact('posts'))
+        ->with('galleries', $galleries);
+
+
+
+		// return view('posts.index');    	  	
     }
 
     public function show($id)

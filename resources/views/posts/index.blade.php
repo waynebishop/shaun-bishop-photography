@@ -77,9 +77,28 @@ $postcounter = 0;
     <!-- Post Row 1 -->
 	<!-- Image for Post 1 -->
 	<div class="row post-row">
-	    <div class="col-sm-12 col-md-7">            
+	    <div class="col-sm-12 col-md-7">
+           
 	         <a href="/posts/{{ $post->id }}">
-	            <img class="img-responsive img-rounded" src="img/andyBatsman_Medium.jpg" alt="">
+                
+	            @if ($galleries->count() > 0)
+                    
+                    @foreach ($galleries as $gallery)
+
+                        @if ($gallery->id == $post->gallery_id)
+
+                            @if (count($gallery->images))
+
+                                <img class="img-responsive img-rounded" src="{{ url('/gallery/images/thumbs/' . $gallery->images[0]->file_name) }}" alt="">
+
+                            @endif
+
+                        @endif
+
+                    @endforeach     
+
+                @endif
+
 	        </a>
 	    </div>    
 	    <!-- Text for MD and LG Screens -->
@@ -122,10 +141,30 @@ $postcounter = 0;
         </div>
         
         <!-- Image for Post -->
-        <div class="col-sm-12 col-md-7">            
+        <div class="col-sm-12 col-md-7">
+            
             <a href="/posts/{{ $post->id }}">
-                <img class="img-responsive img-rounded" src="img/bowler_Medium.jpg" alt="">
-            </a>               
+
+                @if ($galleries->count() > 0)
+                        
+                    @foreach ($galleries as $gallery)
+
+                        @if ($gallery->id == $post->gallery_id)
+
+                            @if (count($gallery->images))
+
+                                <img class="img-responsive img-rounded" src="{{ url('/gallery/images/thumbs/' . $gallery->images[0]->file_name) }}" alt="">
+
+                            @endif
+
+                        @endif
+
+                    @endforeach     
+
+                @endif
+
+            </a>
+
         </div>
 
         <!-- Text for SM and XS Screens -->    

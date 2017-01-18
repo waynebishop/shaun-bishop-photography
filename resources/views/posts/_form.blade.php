@@ -10,7 +10,7 @@
 	{!! Form::label('gallery_id', 'Gallery for Blog Post:') !!}
 	{!! Form::select('gallery_id',[
     	'18' => 'Blogpost gallery',
-    	'19' => 'Sport gallery',
+    	'57' => 'Blogpost 2 gallery',
 		]); !!}
 </div>
 
