@@ -11,6 +11,7 @@
 	{!! Form::select('gallery_id',[
     	'18' => 'Blogpost gallery',
     	'57' => 'Blogpost 2 gallery',
+    	'58' => 'Blogpost 3 gallery',
 		]); !!}
 </div>
 

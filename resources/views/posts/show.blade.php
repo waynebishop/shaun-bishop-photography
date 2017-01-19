@@ -39,7 +39,14 @@
 
         <h2 class="text-center">{{ $post->title }}<a href="{{url('gallery/viewonly/' . $post->gallery_id)}}" class="btn btn-xs btn-info pull-right"><span class="glyphicon glyphicon-film" aria-hidden="true"></span> Gallery</a></h2>
         
-        <p><a href="#" class="btn btn-xs btn-primary"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> SPORT</a><small> Author: <span>Shaun Bishop </span></p>
+        <p>
+            <!-- TAG -->
+            <a href="#" class="btn btn-xs btn-primary"> {{$post->post_type}}</a>
+            <small> Author: <span>Shaun Bishop </span>
+
+            <a href="/posts/{{ $post->id }}/edit" class="btn btn-xs btn-warning pull-right"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit </a>
+
+            <a href="/posts/{{ $post->id }}/delete" class="btn btn-xs btn-danger pull-right"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Delete </a></p>
         
         <p>Created: <span>16 Nov 2016 </span>Updated: <span>20 Nov 2016 </span></small></p>
         

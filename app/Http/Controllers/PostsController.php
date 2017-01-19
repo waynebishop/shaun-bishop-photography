@@ -101,4 +101,33 @@ class PostsController extends Controller
 
     }
 
+    public function delete($id)
+    {
+        // Load the post
+        $post = Post::findOrFail($id);
+
+        // check ownership as get ID from URL
+        if ($post->created_by != Auth::user()->id) {
+            abort('403', 'You are not allowed ot delete this post');
+        }
+
+        // get the images
+        // $images = $currentGallery->images();
+
+        // delete the images
+        // foreach ($currentGallery->images as $image) {
+        //     unlink(public_path($image->file_path));
+        //     unlink(public_path('gallery/images/thumbs/' . $image->file_name));
+        // }
+
+        // delete the DB records
+        // $currentGallery->images()->delete();
+
+        // $post->delete();
+
+        // redirect back
+        return redirect('posts');
+   
+    }
+
 }
