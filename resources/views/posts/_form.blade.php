@@ -8,11 +8,13 @@
 <h2>Choose a Gallery for this Blog Post</h2>
 <div class="form-group">
 	{!! Form::label('gallery_id', 'Gallery for Blog Post:') !!}
+
 	{!! Form::select('gallery_id',[
-    	'18' => 'Blogpost gallery',
+		'18' => 'Blogpost gallery',
     	'57' => 'Blogpost 2 gallery',
     	'58' => 'Blogpost 3 gallery',
-		]); !!}
+	]); !!}
+
 </div>
 
 <h2>Create the Blog Post</h2>

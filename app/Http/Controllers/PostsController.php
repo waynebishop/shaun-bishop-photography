@@ -62,7 +62,29 @@ class PostsController extends Controller
 
     public function create()
     {
-    	return view('posts.create'); 
+    	
+        $galleries = Gallery::where('gallery_cat', 'Blogpost')->get();
+
+        foreach($galleries as $gallery){
+            $gallery_array[$gallery->id] = $gallery->id . " - " . $gallery->name;
+        }
+
+
+
+        // dd($gallery_array);
+
+        // $galleryOptions = [
+
+        //     '18' => 'Blogpost gallery',
+        //     '57' => 'Blogpost 2 gallery',
+        //     '58' => 'Blogpost 3 gallery',
+        // ];
+
+        return view('posts.create')
+        ->with('galleries', $galleries);
+  
+
+        // ->with('galleryOptions', $galleryOptions);
     }
 
     public function store(PostRequest $request)
