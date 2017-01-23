@@ -248,7 +248,15 @@ class GalleryController extends Controller
         // redirect back
         return redirect()->back();
 
-    }    
+    }
+
+    public function deleteImage($id)
+    {
+        $currentImage = Image::findOrFail($id);
+
+        return redirect()->back();    
+    }
+
 
 }
 

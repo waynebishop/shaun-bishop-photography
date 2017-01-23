@@ -26,6 +26,7 @@
 	<div class="col-md-12">
 		<h1>{{$gallery->name}}</h1>
 	</div>
+
 </div>
 
 <div class="row">
@@ -37,6 +38,7 @@
 					<a href="{{ url($image->file_path) }}" data-lightbox="mygallery">
 						<img src="{{ url('/gallery/images/thumbs/' . $image->file_name) }} " alt="gallery images">
 					</a>
+					<a href="" class="btn btn-danger">Delete</a>
 				</li>
 				@endforeach
 			</ul>
