@@ -252,7 +252,19 @@ class GalleryController extends Controller
 
     public function deleteImage($id)
     {
-        $currentImage = Image::findOrFail($id);
+        $currentImage = \App\Image::findOrFail($id);
+
+        $galleryData = $currentImage->gallery()->get();
+
+        // check ownership as get ID from URL
+        if ($galleryData[0]->created_by != Auth::user()->id) {
+            abort('403', 'You are not allowed ot delete this gallery');
+        }
+
+        $currentImage->delete();
+
+        unlink(public_path($currentImage->file_path));
+        unlink(public_path('gallery/images/thumbs/' . $currentImage->file_name));
 
         return redirect()->back();    
     }

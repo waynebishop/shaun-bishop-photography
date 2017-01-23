@@ -64,10 +64,15 @@ class PostsController extends Controller
     {
     	
         $galleries = Gallery::where('gallery_cat', 'Blogpost')->get();
+        // return $galleries;
+
+        $gallery_array = [];
 
         foreach($galleries as $gallery){
-            $gallery_array[$gallery->id] = $gallery->id . " - " . $gallery->name;
+            $gallery_array[$gallery->id] = $gallery->name;
         }
+
+        //return $gallery_array;
 
 
 
@@ -81,7 +86,7 @@ class PostsController extends Controller
         // ];
 
         return view('posts.create')
-        ->with('galleries', $galleries);
+        ->with('galleries', $gallery_array);
   
 
         // ->with('galleryOptions', $galleryOptions);
@@ -110,7 +115,16 @@ class PostsController extends Controller
     public function edit($id)
     {
         $post = Post::findOrFail($id);
-        return view('posts.edit', compact('post'));
+
+        $galleryList = Gallery::where('gallery_cat', 'Blogpost')->get();
+
+        $galleries = [];
+
+        foreach($galleryList as $gallery){
+            $galleries[$gallery->id] = $gallery->name;
+        }
+
+        return view('posts.edit', compact('post', 'galleries'));
     }
 
     public function update($id, PostRequest $request)

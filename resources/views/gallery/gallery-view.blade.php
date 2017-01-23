@@ -38,7 +38,7 @@
 					<a href="{{ url($image->file_path) }}" data-lightbox="mygallery">
 						<img src="{{ url('/gallery/images/thumbs/' . $image->file_name) }} " alt="gallery images">
 					</a>
-					<a href="" class="btn btn-danger">Delete</a>
+					<a href="{{ url('gallery/delete-image/' . $image->id) }}" class="btn btn-danger">Delete</a>
 				</li>
 				@endforeach
 			</ul>

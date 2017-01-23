@@ -57,7 +57,7 @@ Route::get('gallery/portfolioblogpost', 'GalleryController@viewGalleryPortfolioB
 
 Route::get('gallery/viewonly/{id}', 'GalleryController@viewGalleryPicsOnly');
 
-// Route::get('gallery/delete-image/{id}', 'GalleryController@deleteImage');
+Route::get('gallery/delete-image/{id}', 'GalleryController@deleteImage');
 
 
 

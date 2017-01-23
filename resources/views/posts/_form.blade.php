@@ -9,11 +9,7 @@
 <div class="form-group">
 	{!! Form::label('gallery_id', 'Gallery for Blog Post:') !!}
 
-	{!! Form::select('gallery_id',[
-		'18' => 'Blogpost gallery',
-    	'57' => 'Blogpost 2 gallery',
-    	'58' => 'Blogpost 3 gallery',
-	]); !!}
+	{!! Form::select('gallery_id', $galleries); !!}
 
 </div>
 
