@@ -16,6 +16,8 @@ use App\Http\Requests;
 use App\Http\Requests\PostRequest;
 use App\Http\Controllers\Controller;
 
+use Session;
+
 class PostsController extends Controller
 {
     public function index()
@@ -29,10 +31,7 @@ class PostsController extends Controller
 
     	return view('posts.index', compact('posts'))
         ->with('galleries', $galleries);
-
-
-
-		// return view('posts.index');    	  	
+  	  	
     }
 
     public function show($id)
@@ -72,41 +71,17 @@ class PostsController extends Controller
             $gallery_array[$gallery->id] = $gallery->name;
         }
 
-        //return $gallery_array;
-
-
-
-        // dd($gallery_array);
-
-        // $galleryOptions = [
-
-        //     '18' => 'Blogpost gallery',
-        //     '57' => 'Blogpost 2 gallery',
-        //     '58' => 'Blogpost 3 gallery',
-        // ];
 
         return view('posts.create')
         ->with('galleries', $gallery_array);
   
-
-        // ->with('galleryOptions', $galleryOptions);
     }
 
     public function store(PostRequest $request)
     {
-        // Create a new gallery and get the ID
-        
-        // Gallery::create($request->all());
-        // $insertedId = $gallery->id;
-        // dd($insertedId);
-        
-
 
         // Create and save a post and redirect to posts ie blogroll
         Post::create($request->all());
-
-        // Loop over all images and upload with Intervention Image
-        // Each loop will need a query to run (insert image file name and gallery ID)
 
         return redirect('posts');
 
@@ -137,31 +112,19 @@ class PostsController extends Controller
 
     }
 
-    public function delete($id)
+    public function destroy($id)
     {
         // Load the post
         $post = Post::findOrFail($id);
 
         // check ownership as get ID from URL
-        if ($post->created_by != Auth::user()->id) {
-            abort('403', 'You are not allowed ot delete this post');
+        if ($post->user_id != Auth::user()->id) {
+            abort('403', 'You are not allowed to delete this post');
         }
 
-        // get the images
-        // $images = $currentGallery->images();
+        $post->delete();
 
-        // delete the images
-        // foreach ($currentGallery->images as $image) {
-        //     unlink(public_path($image->file_path));
-        //     unlink(public_path('gallery/images/thumbs/' . $image->file_name));
-        // }
-
-        // delete the DB records
-        // $currentGallery->images()->delete();
-
-        // $post->delete();
-
-        // redirect back
+        // Session::flash('success', 'The post was successfully deleted.');
         return redirect('posts');
    
     }

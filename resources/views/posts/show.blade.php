@@ -4,6 +4,14 @@
 
 @section('content')
 
+@if (Session::has('success'))
+
+    <div class="alert alert-success" role="alert">
+        <strong>Success:</strong> {{ Session::get('success') }}
+    </div>
+
+@endif
+
 <!-- Page Heading -->
 <div class="row">
     <div class="col-sm-12">
@@ -38,18 +46,33 @@
         @endif
 
         <h2 class="text-center">{{ $post->title }}<a href="{{url('gallery/viewonly/' . $post->gallery_id)}}" class="btn btn-xs btn-info pull-right"><span class="glyphicon glyphicon-film" aria-hidden="true"></span> Gallery</a></h2>
+
+         <div class="row">
+            <div class="col-sm-2">
         
+                <!-- Created mini-form below to do DELETE as otherwise need to use AJAX plus JS which is better but complicated -->
+                {!! Form::open(['route' => ['posts.destroy', $post->id], 'method' => 'DELETE']) !!}
+
+                {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-block']) !!}
+
+                {!! Form::close() !!}
+
+            </div>
+
+            <a href="/posts/{{ $post->id }}/edit" class="btn btn-md btn-warning"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit </a>
+
+            <hr>
+
+        </div>
+      
         <p>
             <!-- TAG -->
             <a href="#" class="btn btn-xs btn-primary"> {{$post->post_type}}</a>
             <small> Author: <span>Shaun Bishop </span>
+        </p>
 
-            <a href="/posts/{{ $post->id }}/edit" class="btn btn-xs btn-warning pull-right"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit </a>
-
-            <a href="/posts/{{ $post->id }}/delete" class="btn btn-xs btn-danger pull-right"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Delete </a></p>
-        
-        <p>Created: <span>16 Nov 2016 </span>Updated: <span>20 Nov 2016 </span></small></p>
-        
+        <p>Created: <span>16 Nov 2016 </span>Updated: <span>20 Nov 2016 </span></small></p>   
+              
         <p class="lead">{{ $post->intro }}</p>
 
         <p>{{ $post->body }}</p>
