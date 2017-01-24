@@ -104,7 +104,7 @@ $postcounter = 0;
 	    <!-- Text for MD and LG Screens -->
 	    <div class="col-sm-12 col-md-5 hidden-sm hidden-xs"> 
 	        <h2 class="text-left"><a href="/posts/{{ $post->id }}">{{ $post->title }}</a></h2>
-	        <p class="text-left"><a href="#" class="btn btn-xs btn-primary"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> {{$post->post_type}}</a><small> Author: <span>Shaun Bishop</span></p>
+	        <p class="text-left"><a href="#" class="btn btn-xs btn-primary"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> {{$post->post_type}}</a><small> Author: <span>{{$post->user_id}} </span></p>
 	        <p>Created: <span>{{ $post->created_at }}</span> Updated: <span>{{ $post->updated_at }}</span></small></p>
 	        <p class="text-left">{{ substr($post->intro, 0, 180) }}{{ strlen($post->intro) > 180 ? '...' : "" }}</p>
 	        <a href="/posts/{{ $post->id }}" class="btn btn-info btn-md pull-left">Read More</a>
@@ -114,7 +114,7 @@ $postcounter = 0;
 	    <!-- Text for SM and XS Screens -->
 	    <div class="col-sm-12 col-md-5 hidden-md hidden-lg"> 
 	        <h2 class="text-center"><a href="/posts/{{ $post->id }}">{{ $post->title }}</a></h2>
-	        <p><a href="#" class="btn btn-xs btn-primary"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> Sport</a><small> Author: <span>Shaun Bishop</span></p>
+	        <p><a href="#" class="btn btn-xs btn-primary"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> Sport</a><small> Author: <span>{{$post->user_id}} </span></p>
 	        <p>Created: <span>{{ $post->created_at }}</span>Updated: <span>{{ $post->updated_at }}</span></small></p>
 	        <p>{{ substr($post->intro, 0, 180) }}{{ strlen($post->intro) > 180 ? '...' : "" }}</p>
 	        <a href="/posts/{{ $post->id }}" class="btn btn-info pull-left">Read More</a>
@@ -133,7 +133,7 @@ $postcounter = 0;
         <!-- Text for MD and LG Screens -->            
         <div class="col-sm-12 col-md-5 hidden-sm hidden-xs">
             <h2 class="text-right"><a href="/posts/{{ $post->id }}">{{ $post->title }}</a></h2>
-            <p class="text-right"><a href="#" class="btn btn-xs btn-primary"><span class="glyphicon glyphicon-camera" aria-hidden="true"></span> {{$post->post_type}}</a><small> Author: <span>Shaun Bishop</span></p>
+            <p class="text-right"><a href="#" class="btn btn-xs btn-primary"><span class="glyphicon glyphicon-camera" aria-hidden="true"></span> {{$post->post_type}}</a><small> Author: <span>{{$post->user_id}}</span></p>
             <p class="text-right">Created: <span>{{ $post->created_at }}</span>Updated: <span>{{ $post->updated_at }}</span></small></p>
                 <p class="text-right">{{ substr($post->intro, 0, 180) }}{{ strlen($post->intro) > 180 ? '...' : "" }}</p>
             <a href="/posts/{{ $post->id }}" class="btn btn-info pull-right">Read More</a>
@@ -170,11 +170,10 @@ $postcounter = 0;
         <!-- Text for SM and XS Screens -->    
         <div class="col-sm-12 col-md-5 hidden-md hidden-lg">
             <h2 class="text-center"><a href="/posts/{{ $post->id }}">{{ $post->title }}</a></h2>
-            <p><a href="#" class="btn btn-xs btn-primary"><span class="glyphicon glyphicon-camera" aria-hidden="true"></span> Photography</a><small> Author: <span>Shaun Bishop</span></p>
+            <p><a href="#" class="btn btn-xs btn-primary"><span class="glyphicon glyphicon-camera" aria-hidden="true"></span> Photography</a><small> Author: <span>{{$post->user_id}}</span></p>
             <p> Created: <span>{{ $post->created_at }}</span>Updated: <span>{{ $post->updated_at }}</span></small></p>
             <p>{{ substr($post->intro, 0, 180) }}{{ strlen($post->intro) > 180 ? '...' : "" }}</p> 
-            <a href="/posts/{{ $post->id }}" class="btn btn-info">Read More</a>
-            <!-- <a href="/posts/{{ $post->id }}#disqus_thread" class="btn btn-default btn-md">Comment Count</a> --> 
+            <a href="/posts/{{ $post->id }}" class="btn btn-info">Read More</a> 
         </div>
 
     </div> <!-- Close Post Row 2 -->

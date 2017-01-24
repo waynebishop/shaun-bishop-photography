@@ -1,8 +1,9 @@
 <!-- Temporary -->
-{!! Form::hidden('user_id', 2) !!}
-<!-- {!! Form::hidden('gallery_id', 18) !!} -->
 
-
+<?php
+$userid = \Auth::id();
+?>
+{!! Form::hidden('user_id', $userid) !!}
 
 <!-- Choose a Gallery -->
 <h2>Choose a Gallery for this Blog Post</h2>
