@@ -29,28 +29,28 @@
                     <div class="item active">
                         <img src="/img/rugbyTeamCrop1580.JPG" alt="man bruce in a plane"/>
                         <div class="carousel-caption">
-                            <h1>Sport</h1>
+                            <h1><a href="{{url('gallery/portfoliosport/')}}">Sport</a></h1>
                         </div>
                     </div>  
 
                     <div class="item">
                         <img src="/img/bevanBowls1580.JPG" alt="The Mad Butcher"/>
                         <div class="carousel-caption">
-                            <h1>Nature</h1>
+                            <h1><a href="{{url('gallery/portfolionature/')}}">Nature</a></h1>
                         </div>
                     </div>
 
                     <div class="item">
                         <img src="/img/duncanSlashes1580.JPG" alt="Steam Train"/>
                         <div class="carousel-caption">
-                            <h1>Scenic</h1>
+                            <h1><a href="{{url('gallery/portfolioscenic/')}}">Scenic</a></h1>
                         </div>
                     </div>
 
                     <div class="item">
                         <img src="/img/AndyWalksOff1580.JPG" alt="Steam Train"/>
                         <div class="carousel-caption">
-                            <h1>People</h1>
+                            <h1><a href="{{url('gallery/portfoliopeople/')}}">People</a></h1>
                         </div>
                     </div>
 
@@ -58,7 +58,7 @@
                         <!-- <img src="/img/andyPortrait.jpg" alt="Steam Train"/> -->
                         <img src="/img/AndyWalksOff1580.JPG" alt="Steam Train"/>
                         <div class="carousel-caption">
-                            <h1>Other</h1>
+                            <h1><a href="{{url('gallery/portfolioother/')}}">Other</a></h1>
                         </div>
                     </div>
 

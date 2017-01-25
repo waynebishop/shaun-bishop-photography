@@ -164,3 +164,8 @@ footer {
 	left: -55px;
 	top: 53px;
 }
+
+
+.carousel-caption h1 a {
+	color: #FFF;
+}
