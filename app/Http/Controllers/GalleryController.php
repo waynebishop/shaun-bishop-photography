@@ -16,7 +16,7 @@ class GalleryController extends Controller
     
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth', ['except' => ['viewGalleryPortfolioAll', 'viewGalleryPortfolioSport', 'viewGalleryPortfolioNature', 'viewGalleryPortfolioScenic', 'viewGalleryPortfolioPeople', 'viewGalleryPortfolioPeople', 'viewGalleryPortfolioOther', 'viewGalleryPortfolioBlogpost', 'viewGalleryPicsOnly']]);
     }
 
     // This is just to view a Portfolio (All galleries) only with no admin
@@ -111,9 +111,6 @@ class GalleryController extends Controller
         return view('gallery.gallery-portfolio')
         ->with('galleries', $galleries);   
     }
-
-
-
 
 
 

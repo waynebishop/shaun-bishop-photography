@@ -42,9 +42,10 @@
                      <ul class="dropdown-menu">
                         <li><a href="{{url('users/login/')}}">Login</a></li>
                         <li><a href="{{url('users/logout/')}}">Logout</a></li>
-                        <li><a href="#">Account</a></li>
+                        @if(\Auth::check())
                         <li><a href="{{url('posts/create/')}}">Blog Admin</a></li>
-                        <li><a href="{{url('gallery/list/')}}">Gallery Admin</a></li>                                            
+                        <li><a href="{{url('gallery/list/')}}">Gallery Admin</a></li>
+                        @endif                                            
                      </ul>
                 </li> 
             </ul>

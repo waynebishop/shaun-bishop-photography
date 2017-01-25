@@ -47,6 +47,7 @@
 
         <h2 class="text-center">{{ $post->title }}<a href="{{url('gallery/viewonly/' . $post->gallery_id)}}" class="btn btn-xs btn-info pull-right"><span class="glyphicon glyphicon-film" aria-hidden="true"></span> Gallery</a></h2>
 
+        @if(\Auth::check())
          <div class="row">
             <div class="col-sm-2">
         
@@ -64,11 +65,12 @@
             <hr>
 
         </div>
+        @endif
       
         <p>
             <!-- TAG -->
             <a href="#" class="btn btn-xs btn-primary"> {{$post->post_type}}</a>
-            <small> Author: <span>{{$post->user_id}} </span>
+            <small> Author: <span>{{$post->user->name}} </span>
         </p>
 
         <p>Created: <span>16 Nov 2016 </span>Updated: <span>20 Nov 2016 </span></small></p>   
