@@ -117,3 +117,50 @@ footer {
 .search-well {
 	padding-bottom: 22px;
 }
+
+/*For gallery viewonly page*/
+
+#gallery-images-viewonly img {
+	width: 240px;
+	height: 160px;
+	border: 2px solid black;
+	margin-bottom: 10px;
+}
+#gallery-images-viewonly ul {
+	margin: 0;
+	padding: 0;
+}
+#gallery-images-viewonly li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	float: left;
+	padding-right: 10px;
+}
+
+/*For gallery view edit page*/
+#gallery-images img {
+	width: 210px;
+	height: 140px;
+	border: 2px solid black;
+	margin-bottom: 10px;
+}
+
+#gallery-images ul {
+	margin: 0;
+	padding: 0;
+}
+
+#gallery-images li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	float: left;
+	padding-right: 10px;
+}
+
+.delete-image-button {
+	position: relative;
+	left: -55px;
+	top: 53px;
+}

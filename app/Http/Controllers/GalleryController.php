@@ -122,7 +122,10 @@ class GalleryController extends Controller
     {
     	// $galleries = Gallery::all();
 
-        $galleries = Gallery::where('created_by', Auth::user()->id)->get();
+        $galleries = Gallery::where('created_by', Auth::user()->id)
+                        ->orderBy('created_at', 'desc')
+                        ->get();
+                        
 
     	return view('gallery.gallery')
     	->with('galleries', $galleries);
@@ -258,7 +261,7 @@ class GalleryController extends Controller
 
         // check ownership as get ID from URL
         if ($galleryData[0]->created_by != Auth::user()->id) {
-            abort('403', 'You are not allowed ot delete this gallery');
+            abort('403', 'You are not allowed to delete this gallery');
         }
 
         $currentImage->delete();

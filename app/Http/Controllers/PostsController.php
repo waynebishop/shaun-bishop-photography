@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use DB;
 
 // use Illuminate\Http\Request;
 use App\Post;
@@ -23,14 +24,26 @@ class PostsController extends Controller
     public function index()
     {
         // Only get Posts where published_at date is <= today. See Post.php model for the special scope "published"
+
     	$posts = Post::latest('published_at')->published()->get();
 
         $galleries = Gallery::where('gallery_cat', 'Blogpost')->get();
 
-        // dd("$galleries");
+        $userList = DB::table('posts')
+            ->join('users', 'posts.user_id', '=', 'users.id')
+            ->get();
 
-    	return view('posts.index', compact('posts'))
-        ->with('galleries', $galleries);
+        $users = [];
+
+        foreach($userList as $user){
+            $users[$user->id] = $user->name;
+        }
+
+        // dd($users);   
+
+    	return view('posts.index', compact('posts', 'users'))
+            ->with('galleries', $galleries);
+            // ->with('authors', $authors);
   	  	
     }
 
@@ -70,7 +83,6 @@ class PostsController extends Controller
         foreach($galleries as $gallery){
             $gallery_array[$gallery->id] = $gallery->name;
         }
-
 
         return view('posts.create')
         ->with('galleries', $gallery_array);

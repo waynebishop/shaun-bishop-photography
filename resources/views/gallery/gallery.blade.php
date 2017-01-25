@@ -31,7 +31,7 @@
 
 						<td>{{$gallery->gallery_cat}}</td>
 
-						<td><a href="{{url('gallery/view/' . $gallery->id)}}">View</a> / 
+						<td><a href="{{url('gallery/view/' . $gallery->id)}}">Edit</a> / 
 							<a href="{{url('gallery/delete/' . $gallery->id)}}">Delete</a>
 						</td>
 					</tr>

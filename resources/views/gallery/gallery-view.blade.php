@@ -2,26 +2,6 @@
 
 @section('content')
 
-<style type="text/css">
-	#gallery-images img {
-		width: 240px;
-		height: 160px;
-		border: 2px solid black;
-		margin-bottom: 10px;
-	}
-	#gallery-images ul {
-		margin: 0;
-		padding: 0;
-	}
-	#gallery-images li {
-		margin: 0;
-		padding: 0;
-		list-style: none;
-		float: left;
-		padding-right: 10px;
-	}
-</style>
-
 <div class="row">
 	<div class="col-md-12">
 		<h1>{{$gallery->name}}</h1>
@@ -38,7 +18,7 @@
 					<a href="{{ url($image->file_path) }}" data-lightbox="mygallery">
 						<img src="{{ url('/gallery/images/thumbs/' . $image->file_name) }} " alt="gallery images">
 					</a>
-					<a href="{{ url('gallery/delete-image/' . $image->id) }}" class="btn btn-danger">Delete</a>
+					<a href="{{ url('gallery/delete-image/' . $image->id) }}" class="btn btn-sm btn-danger delete-image-button">Delete</a>
 				</li>
 				@endforeach
 			</ul>
