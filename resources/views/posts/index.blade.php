@@ -20,29 +20,44 @@
     
     <div class="col-sm-7">
         <div class="well search-well">
-            <a href="#" class="btn btn-md btn-primary"><span class="glyphicon glyphicon-camera" aria-hidden="true"></span> Photography</a>
+            <a href="{{url('posts/type/Photography')}}" class="btn btn-md btn-primary"></span> Photography</a>
 
-            <a href="#" class="btn btn-md btn-primary"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> Sport</a>
+            <a href="{{url('posts/type/Sport')}}" class="btn btn-md btn-primary"> Sport</a>
      
-            <a href="#" class="btn btn-md btn-primary"><span class="glyphicon glyphicon-grain" aria-hidden="true"></span> Other</a>
+            <a href="{{url('posts/type/Other')}}" class="btn btn-md btn-primary"> Other</a>
+
+            <a href="/posts" class="btn btn-md btn-primary"> All</a>
         </div>        
     </div>
 
     <!-- Search Well -->
     <div class="col-sm-5">
         <div class="well">
-                               
-            <form action="" method="post">
+
+            <form action="/search" method="post" role="search">
+                {{ csrf_field() }}
                 <div class="input-group">
-                    <input type="search" name="search" class="form-control" placeholder="Search title and article only.">
-                    <span class="input-group-btn">
-                    <button type="submit" class="btn btn-sm btn-default">
-                        <a href="#" class="btn btn-xs btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
-                    </button>
+                    <input type="text" class="form-control" name="q" 
+                        placeholder="Search Blog Posts only."><span class="input-group-btn">
+                        <button type="submit" class="btn btn-sm btn-warning">
+                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                        </button>
                     </span>
                 </div>
                 <!-- /.input-group -->
             </form>
+                               
+            <!-- <form action="" method="post">
+                <div class="input-group">
+                    <input type="search" name="search" class="form-control" placeholder="Search Blog Posts only.">
+                    <span class="input-group-btn">
+                    <button type="submit" class="btn btn-sm btn-default">
+                        <a href="/posts/search/cricket" class="btn btn-xs btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
+                    </button>
+                    </span>
+                </div> -->
+                <!-- /.input-group -->
+            <!-- </form> -->
 
         </div>        
     </div>
@@ -106,7 +121,7 @@ $postcounter = 0;
 	    <div class="col-sm-12 col-md-5 hidden-sm hidden-xs"> 
 	        <h2 class="text-left"><a href="/posts/{{ $post->id }}">{{ $post->title }}</a></h2>
 	        <p class="text-left">
-                <a href="#" class="btn btn-xs btn-primary"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> {{$post->post_type}}</a>
+                <a href="/posts/type/{{ $post->post_type }}" class="btn btn-xs btn-primary"> {{$post->post_type}}</a>
                 
                 <small> Author: <span>{{$users[$post->user_id]}}</span></p>
 
@@ -119,7 +134,7 @@ $postcounter = 0;
 	    <!-- Text for SM and XS Screens -->
 	    <div class="col-sm-12 col-md-5 hidden-md hidden-lg"> 
 	        <h2 class="text-center"><a href="/posts/{{ $post->id }}">{{ $post->title }}</a></h2>
-	        <p><a href="#" class="btn btn-xs btn-primary"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> Sport</a><small> Author: <span>{{$users[$post->user_id]}} </span></p>
+	        <p><a href="/posts/type/{{ $post->post_type }}" class="btn btn-xs btn-primary"> {{$post->post_type}}</a><small> Author: <span>{{$users[$post->user_id]}} </span></p>
 	        <p>Created: <span>{{ $post->created_at }}</span>Updated: <span>{{ $post->updated_at }}</span></small></p>
 	        <p>{{ substr($post->intro, 0, 180) }}{{ strlen($post->intro) > 180 ? '...' : "" }}</p>
 	        <a href="/posts/{{ $post->id }}" class="btn btn-info pull-left">Read More</a>
@@ -139,7 +154,7 @@ $postcounter = 0;
         <div class="col-sm-12 col-md-5 hidden-sm hidden-xs">
             <h2 class="text-right"><a href="/posts/{{ $post->id }}">{{ $post->title }}</a></h2>
             <p class="text-right">
-                <a href="#" class="btn btn-xs btn-primary"><span class="glyphicon glyphicon-camera" aria-hidden="true"></span> {{$post->post_type}}</a>
+                <a href="/posts/type/{{ $post->post_type }}" class="btn btn-xs btn-primary"> {{$post->post_type}}</a>
                 <small> Author: <span>{{$users[$post->user_id]}}</span></p>
 
             <p class="text-right">Created: <span>{{ $post->created_at }}</span>Updated: <span>{{ $post->updated_at }}</span></small></p>
@@ -178,7 +193,7 @@ $postcounter = 0;
         <!-- Text for SM and XS Screens -->    
         <div class="col-sm-12 col-md-5 hidden-md hidden-lg">
             <h2 class="text-center"><a href="/posts/{{ $post->id }}">{{ $post->title }}</a></h2>
-            <p><a href="#" class="btn btn-xs btn-primary"><span class="glyphicon glyphicon-camera" aria-hidden="true"></span> Photography</a><small> Author: <span>{{$users[$post->user_id]}}</span></p>
+            <p><a href="/posts/type/{{ $post->post_type }}" class="btn btn-xs btn-primary"> {{$post->post_type}}</a><small> Author: <span>{{$users[$post->user_id]}}</span></p>
             <p> Created: <span>{{ $post->created_at }}</span>Updated: <span>{{ $post->updated_at }}</span></small></p>
             <p>{{ substr($post->intro, 0, 180) }}{{ strlen($post->intro) > 180 ? '...' : "" }}</p> 
             <a href="/posts/{{ $post->id }}" class="btn btn-info">Read More</a> 

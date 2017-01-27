@@ -21,6 +21,13 @@ use Session;
 
 class PostsController extends Controller
 {
+    
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' => ['index', 'show', 'blogType']]);
+    }
+
+
     public function index()
     {
         // Only get Posts where published_at date is <= today. See Post.php model for the special scope "published"
@@ -44,7 +51,6 @@ class PostsController extends Controller
 
     	return view('posts.index', compact('posts', 'users'))
             ->with('galleries', $galleries);
-            // ->with('authors', $authors);
   	  	
     }
 
@@ -61,17 +67,35 @@ class PostsController extends Controller
         // dd($post->created_at->addDays(8)->diffForHumans());
         
         // See model Post.php to see "protected $dates" re how we make published_at date Carbon compatible
-        // dd($post->published_at);
-
-
+        
     	return view('posts.show', compact('post'))
         ->with('galleries', $galleries);	
     }
 
-    public function __construct()
+
+        public function blogType($id)
     {
-        $this->middleware('auth', ['except' => ['index', 'show']]);
+        // Only get Posts where published_at date is <= today. See Post.php model for the special scope "published"
+        // $posts = Post::latest('published_at')->published()->get();
+
+        $posts = Post::latest('published_at')->published()->where('post_type', "$id")->paginate(5);
+
+        $galleries = Gallery::where('gallery_cat', 'Blogpost')->get();
+
+        $userList = DB::table('posts')
+            ->join('users', 'posts.user_id', '=', 'users.id')
+            ->get();
+
+        $users = [];
+
+        foreach($userList as $user){
+            $users[$user->id] = $user->name;
+        }  
+
+        return view('posts.index', compact('posts', 'users'))
+            ->with('galleries', $galleries);
     }
+
 
     public function create()
     {

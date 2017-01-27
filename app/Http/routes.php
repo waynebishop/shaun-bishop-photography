@@ -1,5 +1,9 @@
 <?php
 
+// These are here for search
+use App\Post;
+use Illuminate\Support\Facades\Input;
+
 Route::get('/', 'HomeController@index');
 
 Route::get('users/login', function () {
@@ -60,8 +64,6 @@ Route::get('gallery/viewonly/{id}', 'GalleryController@viewGalleryPicsOnly');
 Route::get('gallery/delete-image/{id}', 'GalleryController@deleteImage');
 
 
-
-
 Route::get('galleries', 'GalleriesController@index');
 
 
@@ -75,7 +77,20 @@ Route::get('galleries', 'GalleriesController@index');
 
 // Route::post('posts/{id}/edit', 'PostsController@store');
 
-// ALL of above 'Route::post....' replaced by the Route below. 
+// ALL of above 'Route::post....' replaced by the Route below.
+
+
+// Search function
+Route::any('/search', function(){
+	$q = Input::get ( 'q' );
+	$post = Post::where('title', 'LIKE', '%' .$q. '%')->orWhere('intro', 'LIKE', '%' .$q. '%')->orWhere('body', 'LIKE', '%' .$q. '%')->get();
+	// return($post);
+	if(count($post) > 0)
+        return view('posts/searchResults')->withDetails($post)->withQuery ( $q );
+    else return view ('post/searchResults')->withMessage('No Details found. Try to search again !');
+});
+
+Route::get('posts/type/{id}', 'PostsController@blogType');
 
 Route::resource('posts', 'PostsController');
 

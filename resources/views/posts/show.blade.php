@@ -69,7 +69,7 @@
       
         <p>
             <!-- TAG -->
-            <a href="#" class="btn btn-xs btn-primary"> {{$post->post_type}}</a>
+            <a href="/posts/type/{{ $post->post_type }}" class="btn btn-xs btn-primary"> {{$post->post_type}}</a>
             <small> Author: <span>{{$post->user->name}} </span>
         </p>
 
