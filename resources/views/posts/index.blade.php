@@ -202,7 +202,6 @@ $postcounter = 0;
 
 @endforeach <!-- End of post loop -->
 
-
 <!-- Pagination -->
 
 <div class="row text-center">
