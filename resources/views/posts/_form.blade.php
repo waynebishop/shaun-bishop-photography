@@ -7,6 +7,7 @@ $userid = \Auth::id();
 
 <!-- Choose a Gallery -->
 <h2>Choose a Gallery for this Blog Post</h2>
+<h3 class="text-primary">Remember: You need to <a class="btn btn-md btn-success"  href="{{url('gallery/list/')}}">Create Gallery </a> then select it below before you can create the Blog Post text content.</h3>
 <div class="form-group">
 	{!! Form::label('gallery_id', 'Gallery for Blog Post:') !!}
 

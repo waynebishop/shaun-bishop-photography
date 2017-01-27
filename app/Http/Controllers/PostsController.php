@@ -24,8 +24,9 @@ class PostsController extends Controller
     public function index()
     {
         // Only get Posts where published_at date is <= today. See Post.php model for the special scope "published"
+        // $posts = Post::latest('published_at')->published()->get();
 
-    	$posts = Post::latest('published_at')->published()->get();
+        $posts = Post::latest('published_at')->published()->paginate(5);
 
         $galleries = Gallery::where('gallery_cat', 'Blogpost')->get();
 
@@ -75,7 +76,7 @@ class PostsController extends Controller
     public function create()
     {
     	
-        $galleries = Gallery::where('gallery_cat', 'Blogpost')->get();
+        $galleries = Gallery::orderBy('id', 'desc')->where('gallery_cat', 'Blogpost')->get();
         // return $galleries;
 
         $gallery_array = [];

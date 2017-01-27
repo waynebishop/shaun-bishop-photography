@@ -22,7 +22,7 @@ class GalleryController extends Controller
     // This is just to view a Portfolio (All galleries) only with no admin
     public function viewGalleryPortfolioAll()
     {
-        $galleries = Gallery::all();
+        $galleries = Gallery::orderBy('id', 'desc')->paginate(8);
 
         $galleries->portfolioCat = 'All Galleries';
 
@@ -37,9 +37,8 @@ class GalleryController extends Controller
     // This is just to view the Sports Portfolio only with no admin
     public function viewGalleryPortfolioSport()
     {
-        // $galleries = Gallery::all();
-
-        $galleries = Gallery::where('gallery_cat', 'Sport')->get();
+    
+        $galleries = Gallery::orderBy('id', 'desc')->where('gallery_cat', 'Sport')->paginate(8);
 
         $galleries->portfolioCat = 'Sport Galleries';
 
@@ -50,9 +49,8 @@ class GalleryController extends Controller
         // This is just to view the Nature Portfolio only with no admin
     public function viewGalleryPortfolioNature()
     {
-        // $galleries = Gallery::all();
 
-        $galleries = Gallery::where('gallery_cat', 'Nature')->get();
+        $galleries = Gallery::orderBy('id', 'desc')->where('gallery_cat', 'Nature')->paginate(8);
 
         $galleries->portfolioCat = 'Nature Galleries';
 
@@ -63,9 +61,8 @@ class GalleryController extends Controller
     // This is just to view the Scenic Portfolio only with no admin
     public function viewGalleryPortfolioScenic()
     {
-        // $galleries = Gallery::all();
 
-        $galleries = Gallery::where('gallery_cat', 'Scenic')->get();
+        $galleries = Gallery::orderBy('id', 'desc')->where('gallery_cat', 'Scenic')->paginate(8);
 
         $galleries->portfolioCat = 'Scenic Galleries';
 
@@ -75,10 +72,8 @@ class GalleryController extends Controller
 
     // This is just to view the People Portfolio only with no admin
     public function viewGalleryPortfolioPeople()
-    {
-        // $galleries = Gallery::all();
-
-        $galleries = Gallery::where('gallery_cat', 'People')->get();
+    {  
+        $galleries = Gallery::orderBy('id', 'desc')->where('gallery_cat', 'People')->paginate(8);
 
         $galleries->portfolioCat = 'People Galleries';
 
@@ -89,9 +84,7 @@ class GalleryController extends Controller
     // This is just to view the Sports Portfolio only with no admin
     public function viewGalleryPortfolioOther()
     {
-        // $galleries = Gallery::all();
-
-        $galleries = Gallery::where('gallery_cat', 'Other')->get();
+        $galleries = Gallery::where('gallery_cat', 'Other')->paginate(8);
 
         $galleries->portfolioCat = 'Other Galleries';
 
@@ -102,9 +95,7 @@ class GalleryController extends Controller
     // This is just to view the Blog Portfolio only with no admin
     public function viewGalleryPortfolioBlogpost()
     {
-        // $galleries = Gallery::all();
-
-        $galleries = Gallery::where('gallery_cat', 'Blogpost')->get();
+        $galleries = Gallery::orderBy('id', 'desc')->where('gallery_cat', 'Blogpost')->paginate(8);
 
         $galleries->portfolioCat = 'Blog Galleries';
 
@@ -114,14 +105,12 @@ class GalleryController extends Controller
 
 
 
-
     public function viewGalleryList()
     {
-    	// $galleries = Gallery::all();
 
         $galleries = Gallery::where('created_by', Auth::user()->id)
                         ->orderBy('created_at', 'desc')
-                        ->get();
+                        ->paginate(10);
                         
 
     	return view('gallery.gallery')

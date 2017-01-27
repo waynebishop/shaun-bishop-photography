@@ -41,6 +41,17 @@
 			</table>		
 
 		@endif
+
+
+		<!-- Pagination -->
+
+		<div class="row text-center">
+		    <div class="col-lg-12">
+		        {!! $galleries->render(); !!}
+		    </div>
+		</div>
+		<!-- /.row -->
+		
 	</div>
 
 
