@@ -84,10 +84,13 @@ Route::get('galleries', 'GalleriesController@index');
 Route::any('/search', function(){
 	$q = Input::get ( 'q' );
 	$post = Post::where('title', 'LIKE', '%' .$q. '%')->orWhere('intro', 'LIKE', '%' .$q. '%')->orWhere('body', 'LIKE', '%' .$q. '%')->get();
+	
 	// return($post);
 	if(count($post) > 0)
         return view('posts/searchResults')->withDetails($post)->withQuery ( $q );
-    else return view ('post/searchResults')->withMessage('No Details found. Try to search again !');
+    else return view ('posts/searchResults')
+    	->withMessage('No matching Posts found. Please try a different key word.')
+    	->withQuery ( $q );
 });
 
 Route::get('posts/type/{id}', 'PostsController@blogType');

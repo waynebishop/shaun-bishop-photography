@@ -134,7 +134,8 @@ $postcounter = 0;
 	    <!-- Text for SM and XS Screens -->
 	    <div class="col-sm-12 col-md-5 hidden-md hidden-lg"> 
 	        <h2 class="text-center"><a href="/posts/{{ $post->id }}">{{ $post->title }}</a></h2>
-	        <p><a href="/posts/type/{{ $post->post_type }}" class="btn btn-xs btn-primary"> {{$post->post_type}}</a><small> Author: <span>{{$users[$post->user_id]}} </span></p>
+	        <p><a href="/posts/type/{{ $post->post_type }}" class="btn btn-xs btn-primary"> {{$post->post_type}}</a>
+            <small> Author: <span>{{$users[$post->user_id]}} </span></p>
 	        <p>Created: <span>{{ $post->created_at }}</span>Updated: <span>{{ $post->updated_at }}</span></small></p>
 	        <p>{{ substr($post->intro, 0, 180) }}{{ strlen($post->intro) > 180 ? '...' : "" }}</p>
 	        <a href="/posts/{{ $post->id }}" class="btn btn-info pull-left">Read More</a>
@@ -193,7 +194,8 @@ $postcounter = 0;
         <!-- Text for SM and XS Screens -->    
         <div class="col-sm-12 col-md-5 hidden-md hidden-lg">
             <h2 class="text-center"><a href="/posts/{{ $post->id }}">{{ $post->title }}</a></h2>
-            <p><a href="/posts/type/{{ $post->post_type }}" class="btn btn-xs btn-primary"> {{$post->post_type}}</a><small> Author: <span>{{$users[$post->user_id]}}</span></p>
+            <p><a href="/posts/type/{{ $post->post_type }}" class="btn btn-xs btn-primary"> {{$post->post_type}}</a>
+            <small> Author: <span>{{$users[$post->user_id]}}</span></p>
             <p> Created: <span>{{ $post->created_at }}</span>Updated: <span>{{ $post->updated_at }}</span></small></p>
             <p>{{ substr($post->intro, 0, 180) }}{{ strlen($post->intro) > 180 ? '...' : "" }}</p> 
             <a href="/posts/{{ $post->id }}" class="btn btn-info">Read More</a> 

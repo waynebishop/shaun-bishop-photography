@@ -72,12 +72,10 @@ class PostsController extends Controller
         ->with('galleries', $galleries);	
     }
 
-
+    // Search by Tag Buttons
         public function blogType($id)
     {
-        // Only get Posts where published_at date is <= today. See Post.php model for the special scope "published"
-        // $posts = Post::latest('published_at')->published()->get();
-
+        
         $posts = Post::latest('published_at')->published()->where('post_type', "$id")->paginate(5);
 
         $galleries = Gallery::where('gallery_cat', 'Blogpost')->get();

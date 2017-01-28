@@ -26,7 +26,7 @@
 
 <div class="row">
 	<div class="col-md-12">
-		<a href="{{url('gallery/portfolio' . strtolower($gallery->gallery_cat))}}" class="btn btn-primary">Back</a>
+		<a href="{{ URL::previous() }}" class="btn btn-primary">Back</a>
 	</div>
 </div>
 

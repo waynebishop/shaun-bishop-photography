@@ -34,8 +34,8 @@
             @foreach ($galleries as $gallery)
 
                 @if (count($gallery->images))
-
-                    <a href="/galleries">
+                    <!-- <a href="/galleries"> -->
+                    <a href="{{url('gallery/viewonly/' . $post->gallery_id)}}">
                         <img class="img-responsive img-rounded" src="{{ url('/gallery/images/thumbs/' . $gallery->images[0]->file_name) }}" alt="">
                     </a>
 
@@ -104,7 +104,9 @@
                                      
         <hr>
 
-        <a href="/posts" class="btn btn-info pull-left"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Back</a>
+        <a href="{{ URL::previous() }}" class="btn btn-info pull-left"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Back</a>
+
+        <!-- "/posts" -->
 
     </div>
 
