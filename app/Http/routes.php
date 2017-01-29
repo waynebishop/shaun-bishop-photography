@@ -97,5 +97,28 @@ Route::get('posts/type/{id}', 'PostsController@blogType');
 
 Route::resource('posts', 'PostsController');
 
+Route::get('/clear', function()
+{
+    Artisan::call('config:cache');
+
+});
+
+Route::get('/migration', function()
+{
+    Artisan::call('migrate');
+
+});
+
+Route::get('/seed', function()
+{
+    Artisan::call('db:seed');
+
+});
+
+
+
+
+
+
 
 

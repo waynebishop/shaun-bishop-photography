@@ -32,36 +32,35 @@
                 <div class="carousel-inner" role="listbox">
                     <!-- class active on the first slide -->
                     <div class="item active">
-                        <img src="/img/scotsRugbyTackle1580.JPG" alt="Scots rugby player running into a tackle"/>
+                        <img src="/img/scotsRugbyTackle1580.jpg" alt="Scots rugby player running into a tackle"/>
                         <div class="carousel-caption">
                             <h1><a href="{{url('gallery/portfoliosport/')}}">Sport</a></h1>
                         </div>
                     </div>  
 
                     <div class="item">
-                        <img src="/img/pinkPurpleFlower1580.JPG" alt="Picture of a purple flower"/>
+                        <img src="/img/pinkPurpleFlower1580.jpg" alt="Picture of a purple flower"/>
                         <div class="carousel-caption">
                             <h1><a href="{{url('gallery/portfolionature/')}}">Nature</a></h1>
                         </div>
                     </div>
 
                     <div class="item">
-                        <img src="/img/wellingtonSunset1580.JPG" alt="Picture of Wellington New Zealand sunrise with fountain in the harbour"/>
+                        <img src="/img/wellingtonSunset1580.jpg" alt="Picture of Wellington New Zealand sunrise with fountain in the harbour"/>
                         <div class="carousel-caption">
                             <h1><a href="{{url('gallery/portfolioscenic/')}}">Scenic</a></h1>
                         </div>
                     </div>
 
                     <div class="item">
-                        <img src="/img/rugbyTeamCrop1580.JPG" alt="Rugby team photo of Wainuiomata High School"/>
+                        <img src="/img/rugbyTeamCrop1580.jpg" alt="Rugby team photo of Wainuiomata High School"/>
                         <div class="carousel-caption">
                             <h1><a href="{{url('gallery/portfoliopeople/')}}">People</a></h1>
                         </div>
                     </div>
 
                     <div class="item">
-                        <!-- <img src="/img/andyPortrait.jpg" alt="Steam Train"/> -->
-                        <img src="/img/faceTreeDouble1580.JPG" alt="Composite image of face and tree in black and white"/>
+                        <img src="/img/faceTreeDouble1580.jpg" alt="Composite image of face and tree in black and white"/>
                         <div class="carousel-caption">
                             <h1><a href="{{url('gallery/portfolioother/')}}">Other</a></h1>
                         </div>
