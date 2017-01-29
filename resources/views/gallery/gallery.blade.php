@@ -83,8 +83,15 @@
 				]); !!}
 			</div>
 
-			<button class="btn btn-primary">Save</button>		
+			<button class="btn btn-success">Save Gallery</button>
+
 		</form>
+
+		<hr>
+
+		<a href="{{url('posts/create/')}}"><button class="btn btn-primary">Create Blog Post</button></a>
+
+
 	</div>
 </div>
 

@@ -15,14 +15,15 @@
 <div class="row">
     <div class="col-sm-10 col-sm-offset-1">
         <h2>Contact Details</h2>
-        <p>Email: gingabish@live.com</p>
+        <p>E-mail: <a href="mailto:shaunbishop.photography@gmail.com"><span>shaunbishop.photography@gmail.com</span></a></p>
         <hr>
     </div>
 </div>
 
 <div class="row">
     <div class="col-sm-10 col-sm-offset-1">
-        <h2>Send me a message:</h2>
+        <h2>Send me a message: </h2>
+        <h3>Please use email address above. Unfortunately this message function is presently unavailable.</h3>
 
         <div class="well">
             <form action="">

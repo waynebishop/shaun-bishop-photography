@@ -186,11 +186,6 @@ class GalleryController extends Controller
         // Now save image to images folder
         $file->move('gallery/images', $filename);
 
-        // check if thumbs folder exists first and make one if not
-        // if (!file_exists('gallery/images/thumbs')) {
-        //     mkdir('gallery/images/thumbs', 0777, true);
-        // }
-
         // Now save thumb sive image to thumbs folder
         $thumb = Image::make('gallery/images/' . $filename)->resize('240,160')->save('gallery/images/thumbs/' . $filename, 50);
         
