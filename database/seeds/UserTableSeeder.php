@@ -15,15 +15,15 @@ class UserTableSeeder extends Seeder
     public function run()
     {
         User::create([
-        	'name' => 'Wayne Bishop',
-        	'email' => 'bish@gmail.com',
-        	'password' => Hash::make('pass'),
+        	'name' => 'Shaun Bishop',
+        	'email' => 'shaun@gmail.com',
+        	'password' => Hash::make('seafog'),
         ]);
 
         User::create([
-        	'name' => 'John Doe',
-        	'email' => 'john@gmail.com',
-        	'password' => Hash::make('pass'),
+        	'name' => 'Wayne Bishop',
+        	'email' => 'wayne@gmail.com',
+        	'password' => Hash::make('seafog'),
         ]);
 
     }
